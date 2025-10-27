@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="36" viewBox="0 0 29 36">
+  <g id="Group_15194" data-name="Group 15194" transform="translate(-1846 -73)">
+    <g id="Group_15182" data-name="Group 15182" transform="translate(114 50.811)">
+      <path id="bell-outline" d="M12.123,26.762h5.213a2.607,2.607,0,1,1-5.213,0m14.336-2.607v1.3H3v-1.3l2.607-2.607V13.73A9.07,9.07,0,0,1,12.123,5V4.607a2.607,2.607,0,1,1,5.213,0V5a9.07,9.07,0,0,1,6.516,8.732v7.819l2.607,2.607M21.246,13.732a6.517,6.517,0,1,0-13.033,0v9.12H21.246Z" transform="translate(1729 28.82)" fill="#fff"/>
+      <g id="Ellipse_27" data-name="Ellipse 27" transform="translate(1744.853 22.189)" fill="red" stroke="#fff" stroke-width="1">
+        <circle cx="8.073" cy="8.073" r="8.073" stroke="none"/>
+        <circle cx="8.073" cy="8.073" r="7.573" fill="none"/>
+      </g>
+      <text id="_1" data-name="1" transform="translate(1749.424 34.762)" fill="#fafbff" font-size="12" font-family="Inter-Medium, Inter" font-weight="500"><tspan x="0" y="0">1</tspan></text>
+    </g>
+  </g>
+</svg>

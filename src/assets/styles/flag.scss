@@ -1,0 +1,233 @@
+.btn-primary {
+  background-color: #5b2ae3;
+  color: #ffffff;
+  border: none;
+  padding: 7px 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 21px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #3407b1;
+  }
+
+  i {
+    margin-right: 5px;
+    font-size: 1.3rem;
+    color: #ffffff;
+    vertical-align: middle;
+  }
+}
+
+
+// Dashboard card styles
+
+.custom-box{
+  width:180px;
+  height: 195px;
+  /* UI Properties */
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 5px #00529621;
+  border: 0.10000000149011612px solid #005296;
+  border-radius: 8px;
+  opacity: 1;
+}
+
+.add-icon{
+  width: 15px;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+.add-icon-wrapper {
+  width: 22px;       // fixed width
+  height: 22px;      // fixed height
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;  // circle
+  transition: background-color 0.3s ease;
+
+  &.add:hover {
+    background-color: #5B2AE3;
+  }
+
+  &.remove:hover {
+    background-color: #FF0C0B;
+  }
+
+  .add-icon {
+    width: 14px;  // icon size
+    height: 14px;
+    display: block;
+    filter: none;
+  }
+
+  &.add:hover .add-icon,
+  &.remove:hover .add-icon {
+    filter: brightness(0) invert(1); // icon turns white
+  }
+}
+
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5rem; // same as gap-2 in Bootstrap
+
+  // Responsive behavior
+  @media (max-width: 500px) {
+    justify-content: center!important;
+  }
+}
+
+// card wrapper 
+.card-wrapper{
+  padding:20px 14px;
+}
+
+
+/* ───────────────  TYPOGRAPHY  ─────────────── */
+/* Card title (example: card.title) */
+.card-title {
+  font-weight: 500; // inter-medium
+  font-size: 1rem; // 16px
+  color: #131313; // black-flag
+}
+
+/* Card unit text (example: card.unit) */
+.card-unit {
+  font-weight: 500;
+  font-size: 0.75rem; // 12px
+  color: #848484; // black-lg
+}
+
+/* Card value - green */
+.card-value-green {
+  font-weight: 500;
+  font-size: 2.75rem; // 44px
+  color: #17B972; // green-light
+}
+
+/* Card value - yellow */
+.card-value-yellow {
+  font-weight: 500;
+  font-size: 2.75rem;
+  color: #FFBE00; // yellow
+}
+
+/* Last updated label */
+.last-updated-label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem; // 14px
+  color: #868686; // black-lite
+}
+
+/* Last updated date */
+.last-updated-date {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem; // 12px
+  color: #848484; // black-lg
+}
+
+/* Left column text */
+.left-column-text {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #131313;
+}
+
+
+// form styles section
+.flag-label{
+  font-weight: 400; // regular
+  font-size: 0.875rem; // 14px
+  color:#8D8D8D;
+  margin-bottom: 8px;
+}
+
+// modal styles
+
+// ::ng-deep.modal-content{
+//   overflow: hidden;
+//   position: relative;
+//   z-index: 300;
+// }
+
+::ng-deep.modal-title{
+  font-size:1.125rem!important;
+  color:#666666!important;
+  font-weight: 600!important;
+}
+
+::ng-deep.modal-body{
+  padding: 22px 16px 20px 20px!important;
+}
+
+::ng-deep.modal-header{
+  padding: 20px 16px 0px 20px!important;
+  border-bottom: 0px!important;
+}
+
+::ng-deep.modal-close:focus-visible {
+  outline: none!important;
+}
+
+
+// modal width 
+// ::ng-deep.modal-content--lg {
+//   max-width: 988px!important;
+// }
+
+
+// tvsm text-area styles
+
+::ng-deep.tvsm-textarea{
+  font-size: 0.813rem!important;
+  color: #1c1c1c!important;
+  border: 1px solid #c0c0c1!important;
+  border-radius: 8px!important;
+  padding:5px!important;
+  &:focus {
+    box-shadow: none !important;
+    border: 1px solid #183883!important;
+    color: #1c1c1c!important;
+  }
+}
+
+// tvsm date field styles
+
+::ng-deep.tvsm-datefield__input{
+  border-radius: 20px!important;
+  padding-right: 30px!important;
+  &:focus{
+    border: 1px solid #183883!important;
+    box-shadow:none!important;
+  }
+}
+
+
+// tvsm multiselect 
+::ng-deep.tvsm-dropdown__trigger:hover{
+  border: 1px solid #183883!important;
+}
+
+::ng-deep.tvsm-dropdown__trigger--open{
+  border: 1px solid #183883!important;
+  box-shadow:none!important;
+}
+
+
+::ng-deep.tvsm-dropdown__search-input{
+  border:1px solid #C0C0C1!important;
+  box-shadow:none!important;
+  &:focus{
+    border: 1px solid #183883!important;
+  }
+}

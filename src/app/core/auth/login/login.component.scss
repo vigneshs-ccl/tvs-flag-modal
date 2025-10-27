@@ -1,0 +1,96 @@
+.login-wrap {
+  min-height: 100vh;
+  overflow: hidden;
+
+  .login-section {
+    width: 50%;
+    background: #ffffff;
+    box-shadow: 0px 3px 6px #0000002b;
+    padding: 20px;
+    height: 100vh;
+  }
+
+  .login-content {
+    flex: 1;
+    gap: 1.5rem;
+
+    .logo-image {
+      width: auto;
+      height: 73px;
+      margin-bottom: 1rem;
+      object-fit: contain;
+    }
+
+    .btn {
+      padding: 0.45rem 5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      justify-content: center;
+      min-width: 300px;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .btn-microsoft {
+      background: #ffffff;
+      border: 0.1px solid rgb(0, 82, 150, 0.1);
+      box-shadow: 0px 2px 5px #00529621;
+      border-radius: 21px;
+      color: #003486;
+    }
+
+    .btn-microsoft:hover:not(:disabled) {
+      background: #dae3ff;
+    }
+
+    .microsoft-icon {
+      flex-shrink: 0;
+      width: 29px;
+      height: 29px;
+    }
+  }
+
+  .login-footer {
+    gap: 0.5rem;
+
+    .footer-logo {
+      width: auto;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .app-version {
+      font-size: 0.875rem;
+      color: #8d8d8d;
+    }
+
+    .copyright-text {
+      font-size: 0.875rem;
+      color: #8d8d8d;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .login-section {
+      width: 100%;
+      box-shadow: none;
+    }
+    .login-content {
+      .btn {
+        min-width: auto;
+        padding: 0.45rem 3rem;
+      }
+    }
+  }
+}

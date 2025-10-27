@@ -1,0 +1,26 @@
+<div class="login-wrap d-flex align-items-end justify-center flex-column">
+  <div
+    class="login-section d-flex flex-column align-items-center justify-space-between flex-grow-1"
+  >
+    <div class="login-content d-flex flex-column align-items-center justify-center">
+      <img src="assets/images/logo.png" alt="TVSM-MHI Logo" class="logo-image" />
+      <div class="login-actions">
+        <button
+          type="button"
+          (click)="onMicrosoftLogin()"
+          [disabled]="isLoading"
+          class="btn btn-microsoft"
+        >
+          <img src="assets/images/microsoft-icon.png" alt="Microsoft Logo" class="microsoft-icon" />
+          {{ isLoading ? 'Signing in...' : 'Login With Microsoft' }}
+        </button>
+      </div>
+    </div>
+
+    <div class="login-footer d-flex flex-column align-items-center">
+      <img src="assets/images/tvs-logo.png" alt="TVS Logo" class="footer-logo" />
+      <p class="app-version">Version 1.0.0</p>
+      <p class="copyright-text">Handled by D&AI ESG - Digital Products</p>
+    </div>
+  </div>
+</div>
