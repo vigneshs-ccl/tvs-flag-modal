@@ -1,10 +1,12 @@
+import { DropdownOption } from '@app/interface/DropdownOption';
+
 export interface FlagData {
-  cardId:number;
+  cardId: number;
   id: number;
   title: string;
   unit: string;
   value: number;
   description: string;
-  date: string;
-  sendTo: string[]; // ids of selected options
+  date: Date | null;
+  sendTo: DropdownOption[]; // ids of selected options
 }

@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
-import { SuggestionComponent } from './modules/coach/suggestion.component/suggestion.component';
+
 import { FlagComponent } from './modules/admin/flag/flag.component';
 
 export const routes: Routes = [
@@ -22,10 +22,6 @@ export const routes: Routes = [
     path: 'employee',
     loadChildren: () => import('./modules/employee/employee.module').then((m) => m.EmployeeModule),
     canActivate: [AuthGuard],
-  },
-  {
-    path: 'suggestion',
-    component: SuggestionComponent,
   },
   {
     path: 'flag',

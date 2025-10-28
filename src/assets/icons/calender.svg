@@ -1,0 +1,25 @@
+<svg id="Group_17997" data-name="Group 17997" xmlns="http://www.w3.org/2000/svg" width="23.281" height="23.281" viewBox="0 0 23.281 23.281">
+  <path id="Path_25002" data-name="Path 25002" d="M21.459,23.281H1.822A1.824,1.824,0,0,1,0,21.459V3.278A1.825,1.825,0,0,1,1.822,1.455H21.459a1.825,1.825,0,0,1,1.822,1.822V21.459A1.824,1.824,0,0,1,21.459,23.281ZM1.822,2.91a.368.368,0,0,0-.367.367V21.459a.367.367,0,0,0,.367.367H21.459a.367.367,0,0,0,.367-.367V3.278a.368.368,0,0,0-.367-.367H1.822ZM22.554,7.275H.728a.728.728,0,1,1,0-1.455H22.554a.728.728,0,0,1,0,1.455ZM4.365,4.365a.728.728,0,0,1-.728-.728V.728a.728.728,0,0,1,1.455,0v2.91A.728.728,0,0,1,4.365,4.365Zm14.551,0a.727.727,0,0,1-.728-.728V.728a.728.728,0,0,1,1.455,0v2.91A.727.727,0,0,1,18.916,4.365Z" fill="#797979"/>
+  <ellipse id="Ellipse_6659" data-name="Ellipse 6659" cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(4 12)" fill="#797979"/>
+  <ellipse id="Ellipse_6660" data-name="Ellipse 6660" cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(4 15)" fill="#797979"/>
+  <ellipse id="Ellipse_6661" data-name="Ellipse 6661" cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(4 18)" fill="#797979"/>
+  <circle id="Ellipse_6662" data-name="Ellipse 6662" cx="1" cy="1" r="1" transform="translate(15 9)" fill="#797979"/>
+  <circle id="Ellipse_6663" data-name="Ellipse 6663" cx="1" cy="1" r="1" transform="translate(15 12)" fill="#797979"/>
+  <circle id="Ellipse_6664" data-name="Ellipse 6664" cx="1" cy="1" r="1" transform="translate(15 15)" fill="#797979"/>
+  <circle id="Ellipse_6665" data-name="Ellipse 6665" cx="1" cy="1" r="1" transform="translate(15 18)" fill="#797979"/>
+  <circle id="Ellipse_6666" data-name="Ellipse 6666" cx="1" cy="1" r="1" transform="translate(18 9)" fill="#797979"/>
+  <circle id="Ellipse_6667" data-name="Ellipse 6667" cx="1" cy="1" r="1" transform="translate(18 12)" fill="#797979"/>
+  <circle id="Ellipse_6668" data-name="Ellipse 6668" cx="1" cy="1" r="1" transform="translate(18 15)" fill="#797979"/>
+  <circle id="Ellipse_6669" data-name="Ellipse 6669" cx="1" cy="1" r="1" transform="translate(9 9)" fill="#797979"/>
+  <circle id="Ellipse_6670" data-name="Ellipse 6670" cx="1" cy="1" r="1" transform="translate(9 12)" fill="#797979"/>
+  <circle id="Ellipse_6671" data-name="Ellipse 6671" cx="1" cy="1" r="1" transform="translate(9 15)" fill="#797979"/>
+  <circle id="Ellipse_6672" data-name="Ellipse 6672" cx="1" cy="1" r="1" transform="translate(9 18)" fill="#797979"/>
+  <ellipse id="Ellipse_6673" data-name="Ellipse 6673" cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(7 9)" fill="#797979"/>
+  <ellipse id="Ellipse_6674" data-name="Ellipse 6674" cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(7 12)" fill="#797979"/>
+  <ellipse id="Ellipse_6675" data-name="Ellipse 6675" cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(7 15)" fill="#797979"/>
+  <ellipse id="Ellipse_6676" data-name="Ellipse 6676" cx="0.5" cy="1" rx="0.5" ry="1" transform="translate(7 18)" fill="#797979"/>
+  <circle id="Ellipse_6677" data-name="Ellipse 6677" cx="1" cy="1" r="1" transform="translate(12 9)" fill="#797979"/>
+  <circle id="Ellipse_6678" data-name="Ellipse 6678" cx="1" cy="1" r="1" transform="translate(12 12)" fill="#797979"/>
+  <circle id="Ellipse_6679" data-name="Ellipse 6679" cx="1" cy="1" r="1" transform="translate(12 15)" fill="#797979"/>
+  <circle id="Ellipse_6680" data-name="Ellipse 6680" cx="1" cy="1" r="1" transform="translate(12 18)" fill="#797979"/>
+</svg>

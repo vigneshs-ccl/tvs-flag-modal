@@ -1,22 +1,14 @@
-<div class="d-flex flex-column flex-md-row py-cs-40 px-cs-30">
+<div class="d-flex flex-column flex-md-row px-5 py-5">
   <!-- First column: fixed max width on md+ -->
-  <div class="left-column border me-md-4 mb-3 mb-md-0 d-flex gap-5 px-cs-5 py-cs-10">
+  <div class="left-column border me-md-4 mb-3 mb-md-0 d-flex gap-5 px-2 py-2 rounded-2">
     <div>
-      <span>Employee name</span>
+      <span>Employee</span>
       <!-- Tooltip for left column flag -->
-      <!-- <div *ngIf="leftColumnFlag" class="position-relative flag-tooltip-container ms-2">
+      <div *ngIf="leftColumnFlag" class="position-relative flag-tooltip-container ms-2">
         <img src="./assets/icons/flag.svg" alt="flag" class="flag-icon" />
-        <div class="flag-tooltip">
-          <div class="text-bs-inter-medium-bright-red-14s-17l mb-1">
-            Due Date: {{ selectedDate }}
-          </div>
-          <div class="text-bs-inter-reg-dark-gray-13s-18l">
-            {{ description }}
-          </div>
-        </div>
-      </div> -->
+      </div>
     </div>
-    <!-- <div
+    <div
       class="cursor add-icon-wrapper"
       [ngClass]="leftColumnFlag ? 'remove' : 'add'"
       (click)="leftColumnFlag ? removeLeftColumnFlag() : openLeftFlagModal()"
@@ -26,39 +18,22 @@
         [alt]="leftColumnFlag ? 'remove' : 'add'"
         class="add-icon"
       />
-    </div> -->
+    </div>
   </div>
 
   <!-- Second column: takes remaining space -->
   <div class="right-column d-flex flex-wrap gap-3">
     @for (card of cardData; track card.id) {
-      <div
-        class="d-flex flex-column justify-content-between custom-box px-cs-16 py-cs-20 card-wrapper"
-      >
+      <div class="d-flex flex-column justify-content-between custom-box card-wrapper">
         <div class="d-flex justify-content-between align-items-center">
           <div class="d-flex gap-1 align-items-center">
             <div class="card-title">{{ card.title }}</div>
             <div class="card-unit">{{ card.unit }}</div>
 
             <!--  Conditionally show red flag if card has flag -->
-            <!-- <div *ngIf="hasFlag(card.id)" class="position-relative flag-tooltip-container">
-              <img
-                src="./assets/icons/flag.svg"
-                alt="flag"
-                class="flag-icon"
-                (mouseenter)="adjustTooltipPosition($event, card.id)"
-              />
-
-              Tooltip box
-              <div class="flag-tooltip">
-                <div class="text-bs-inter-medium-bright-red-14s-17l mb-1">
-                  Due Date: {{ getFlagData(card.id)?.date }}
-                </div>
-                <div class="text-bs-inter-reg-dark-gray-13s-18l">
-                  {{ getFlagData(card.id)?.description }}
-                </div>
-              </div>
-            </div> -->
+            <div *ngIf="hasFlag(card.id)" class="position-relative flag-tooltip-container">
+              <img src="./assets/icons/flag.svg" alt="flag" class="flag-icon" width="16px" />
+            </div>
           </div>
           <div
             class="cursor add-icon-wrapper"
@@ -92,34 +67,51 @@
 
 <tvsm-modal [isOpen]="isOpen" (closed)="close()" [title]="modalTitle" size="lg">
   <div class="modal-content-wrap mb-4">
-    <form #flagForm="ngForm" (ngSubmit)="onSubmit(flagForm)">
+    <form #flagForm="ngForm" id="flagForm" (ngSubmit)="onSubmit()">
       <div>
         <label class="flag-label">Flag Description</label>
         <tvsm-textarea
-          (valueChange)="onInput($event)"
+          *ngIf="showTextarea"
+          [value]="description"
+          (valueChange)="onInputChange($event)"
+          maxlength="250"
           name="description"
-          required
         >
         </tvsm-textarea>
+        @if (descriptionError) {
+          <div class="error-text">{{ descriptionError }}</div>
+        }
       </div>
 
       <div>
         <div class="container my-3">
           <div class="row g-3">
             <!-- First column: Date -->
-            <div class="col-12 col-lg-4 px-0">
-              <label for="dateInput1" class="flag-label"> Due Date </label>
+            <div class="col-12 col-md-4 px-0">
+              <div class="custom-datefield-wrapper">
+                <label for="dateInput1" class="flag-label"> Due Date </label>
 
-              <!-- Input + icon wrapper -->
-              <tvsm-datefield
-                [value]="selectedDate"
-                [minDate]="getTodayDateValue()"
-                (onChange)="onDateChange($event)"
-              ></tvsm-datefield>
+                <!-- Input + icon wrapper -->
+                <tvsm-datefield
+                  #tvsmTextArea
+                  [value]="selectedDate"
+                  (onChange)="onDateChange($event)"
+                  [required]="true"
+                  [minDate]="getTodayDateValue()"
+                ></tvsm-datefield>
+                <img
+                  src="./assets/icons/calender.svg"
+                  alt="calendar"
+                  class="custom-calendar-icon"
+                />
+              </div>
+              @if (dateError) {
+                <div class="error-text">{{ dateError }}</div>
+              }
             </div>
 
             <!-- Second column: Dropdown -->
-            <div class="col-12 col-lg-4 px-0 px-lg-3">
+            <div class="col-12 col-md-4 px-0 mx-md-3">
               <label for="dateInput2" class="flag-label"> Send mail to </label>
               <tvsm-dropdown
                 [options]="multiSelectOptions"
@@ -133,6 +125,9 @@
                 [searchIconContent]="searchIcon"
                 [arrowIconContent]="arrowIcon"
               ></tvsm-dropdown>
+              @if (sendToError) {
+                <div class="error-text">{{ sendToError }}</div>
+              }
             </div>
           </div>
         </div>
@@ -140,9 +135,13 @@
     </form>
   </div>
 
-  <div
-    class="modal-actions d-flex align-items-center justify-content-end justify-content-center-sm gap-2"
-  >
-    <button type="submit" class="btn btn-primary" form="flagForm">Submit</button>
+  <div class="d-flex align-items-center justify-content-center justify-content-sm-end gap-2">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      form="flagForm"
+    >
+      Submit
+    </button>
   </div>
 </tvsm-modal>

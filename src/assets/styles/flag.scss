@@ -1,11 +1,12 @@
+/* ───────────────  BUTTONS  ─────────────── */
 .btn-primary {
   background-color: #5b2ae3;
-  color: #ffffff;
+  color: #fff;
   border: none;
-  padding: 7px 20px;
+  padding: 0.4375rem 1.25rem; // 7px 20px
   font-size: 0.875rem;
   font-weight: 600;
-  border-radius: 21px;
+  border-radius: 1.3125rem; // 21px
   transition: background-color 0.3s ease;
 
   &:hover {
@@ -13,221 +14,226 @@
   }
 
   i {
-    margin-right: 5px;
+    margin-right: 0.3125rem;
     font-size: 1.3rem;
-    color: #ffffff;
+    color: #fff;
     vertical-align: middle;
   }
 }
 
-
-// Dashboard card styles
-
-.custom-box{
-  width:180px;
-  height: 195px;
-  /* UI Properties */
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 0px 2px 5px #00529621;
-  border: 0.10000000149011612px solid #005296;
-  border-radius: 8px;
-  opacity: 1;
+/* ───────────────  DASHBOARD CARD  ─────────────── */
+.custom-box {
+  width: 11.25rem; // 180px
+  height: 12.1875rem; // 195px
+  background: #fff;
+  box-shadow: 0 2px 5px #00529621;
+  border: 0.1px solid #005296;
+  border-radius: 0.5rem;
 }
 
-.add-icon{
-  width: 15px;
-}
-
-.cursor{
-  cursor: pointer;
+.card-wrapper {
+  padding: 1.25rem 0.875rem;
 }
 
 .add-icon-wrapper {
-  width: 22px;       // fixed width
-  height: 22px;      // fixed height
+  width: 1.375rem;
+  height: 1.375rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;  // circle
+  border-radius: 50%;
+  background-color: #f5f5f5;
   transition: background-color 0.3s ease;
 
   &.add:hover {
-    background-color: #5B2AE3;
+    background-color: #5b2ae3;
   }
 
   &.remove:hover {
-    background-color: #FF0C0B;
+    background-color: #ff0c0b;
   }
 
   .add-icon {
-    width: 14px;  // icon size
-    height: 14px;
+    width: 0.875rem;
+    height: 0.875rem;
     display: block;
-    filter: none;
   }
 
   &.add:hover .add-icon,
   &.remove:hover .add-icon {
-    filter: brightness(0) invert(1); // icon turns white
+    filter: brightness(0) invert(1);
   }
 }
 
-
-.modal-actions {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 0.5rem; // same as gap-2 in Bootstrap
-
-  // Responsive behavior
-  @media (max-width: 500px) {
-    justify-content: center!important;
-  }
+.cursor {
+  cursor: pointer;
 }
-
-// card wrapper 
-.card-wrapper{
-  padding:20px 14px;
-}
-
 
 /* ───────────────  TYPOGRAPHY  ─────────────── */
-/* Card title (example: card.title) */
 .card-title {
-  font-weight: 500; // inter-medium
-  font-size: 1rem; // 16px
-  color: #131313; // black-flag
+  font-weight: 500;
+  font-size: 1rem;
+  color: #131313;
 }
 
-/* Card unit text (example: card.unit) */
 .card-unit {
   font-weight: 500;
-  font-size: 0.75rem; // 12px
-  color: #848484; // black-lg
+  font-size: 0.75rem;
+  color: #848484;
 }
 
-/* Card value - green */
 .card-value-green {
   font-weight: 500;
-  font-size: 2.75rem; // 44px
-  color: #17B972; // green-light
+  font-size: 2.75rem;
+  color: #17b972;
 }
 
-/* Card value - yellow */
 .card-value-yellow {
   font-weight: 500;
   font-size: 2.75rem;
-  color: #FFBE00; // yellow
+  color: #ffbe00;
 }
 
-/* Last updated label */
 .last-updated-label {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 0.875rem; // 14px
-  color: #868686; // black-lite
+  font-size: 0.875rem;
+  color: #868686;
 }
 
-/* Last updated date */
 .last-updated-date {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 0.75rem; // 12px
-  color: #848484; // black-lg
+  font-size: 0.75rem;
+  color: #848484;
 }
 
-/* Left column text */
 .left-column-text {
   font-weight: 500;
   font-size: 1rem;
   color: #131313;
 }
 
-
-// form styles section
-.flag-label{
-  font-weight: 400; // regular
-  font-size: 0.875rem; // 14px
-  color:#8D8D8D;
-  margin-bottom: 8px;
+/* ───────────────  FORM STYLES  ─────────────── */
+.flag-label {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #8d8d8d;
+  margin-bottom: 0.5rem;
 }
 
-// modal styles
-
-// ::ng-deep.modal-content{
-//   overflow: hidden;
-//   position: relative;
-//   z-index: 300;
-// }
-
-::ng-deep.modal-title{
-  font-size:1.125rem!important;
-  color:#666666!important;
-  font-weight: 600!important;
+/* ───────────────  MODAL  ─────────────── */
+::ng-deep .modal-title {
+  font-size: 1.125rem !important;
+  color: #666 !important;
+  font-weight: 600 !important;
 }
 
-::ng-deep.modal-body{
-  padding: 22px 16px 20px 20px!important;
+::ng-deep .modal-body {
+  padding: 1.375rem 1rem 1.25rem 1.25rem !important;
 }
 
-::ng-deep.modal-header{
-  padding: 20px 16px 0px 20px!important;
-  border-bottom: 0px!important;
+::ng-deep .modal-header {
+  padding: 1.25rem 1rem 0 1.25rem !important;
+  border-bottom: 0 !important;
 }
 
-::ng-deep.modal-close:focus-visible {
-  outline: none!important;
+::ng-deep .modal-close:focus-visible {
+  outline: none !important;
 }
 
+::ng-deep .modal-close{
+  height: 2rem!important;
+}
 
-// modal width 
-// ::ng-deep.modal-content--lg {
-//   max-width: 988px!important;
-// }
+/* ───────────────  TEXTAREA  ─────────────── */
+::ng-deep .tvsm-textarea {
+  font-size: 0.813rem !important;
+  color: #909090 !important;
+  border: 1px solid #c0c0c1 !important;
+  border-radius: 0.5rem !important;
+  padding: 0.3125rem !important;
 
-
-// tvsm text-area styles
-
-::ng-deep.tvsm-textarea{
-  font-size: 0.813rem!important;
-  color: #1c1c1c!important;
-  border: 1px solid #c0c0c1!important;
-  border-radius: 8px!important;
-  padding:5px!important;
   &:focus {
+    border-color: #183883 !important;
+    color: #1c1c1c !important;
     box-shadow: none !important;
-    border: 1px solid #183883!important;
-    color: #1c1c1c!important;
   }
 }
 
-// tvsm date field styles
+/* ───────────────  DATE FIELD  ─────────────── */
+::ng-deep .tvsm-datefield__input {
+  border-radius: 1.25rem !important;
+  padding-right: 1.875rem !important;
+  color: #909090 !important;
 
-::ng-deep.tvsm-datefield__input{
-  border-radius: 20px!important;
-  padding-right: 30px!important;
-  &:focus{
-    border: 1px solid #183883!important;
-    box-shadow:none!important;
+  &::-webkit-calendar-picker-indicator { display: none; -webkit-appearance: none; } &::-moz-calendar-picker-indicator { display: none; } &::-ms-clear { display: none; width: 0; height: 0; }
+  &:focus {
+    border: 1px solid #183883 !important;
+    box-shadow: none !important;
   }
 }
 
-
-// tvsm multiselect 
-::ng-deep.tvsm-dropdown__trigger:hover{
-  border: 1px solid #183883!important;
+::ng-deep .tvsm-datefield__clear {
+  display: none !important;
 }
 
-::ng-deep.tvsm-dropdown__trigger--open{
-  border: 1px solid #183883!important;
-  box-shadow:none!important;
+.custom-datefield-wrapper {
+  position: relative;
+
+  .custom-calendar-icon {
+    position: absolute;
+    right: 1rem;
+    top: 72%;
+    transform: translateY(-50%);
+    width: 1.4rem;
+    height: 1.4rem;
+    pointer-events: none;
+  }
 }
 
+/* ───────────────  MULTISELECT  ─────────────── */
+::ng-deep .tvsm-dropdown__trigger:hover {
+  border: 1px solid #c0c0c1 !important;
+}
 
-::ng-deep.tvsm-dropdown__search-input{
-  border:1px solid #C0C0C1!important;
-  box-shadow:none!important;
-  &:focus{
-    border: 1px solid #183883!important;
+::ng-deep .tvsm-dropdown__trigger--open {
+  border: 1px solid #183883 !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .tvsm-dropdown__search-input {
+  border: 1px solid #c0c0c1 !important;
+
+  &:focus {
+    border-color: #183883 !important;
+  }
+}
+
+::ng-deep .tvsm-dropdown .tvsm-dropdown__display-text {
+  color: #909090 !important;
+}
+
+/* ───────────────  ERROR TEXT  ─────────────── */
+.error-text {
+  color: #d32f2f;
+  font-size: 0.8125rem; // ~13px
+  font-weight: 400;
+  margin-top: 0.25rem;
+  margin-left: 0.125rem;
+  line-height: 1.3;
+  display: block;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* ───────────────  MODAL ACTIONS  ─────────────── */
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5rem;
+
+  @media (max-width: 500px) {
+    justify-content: center !important;
   }
 }
