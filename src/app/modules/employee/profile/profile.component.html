@@ -1,0 +1,72 @@
+<header class="header d-flex align-items-center justify-content-between py-cs-6 px-cs-24 position-relative">
+  <div class="text-white">
+    <!-- Title text goes here -->
+    My Health Index
+  </div>
+
+  <div class="header-profile">
+    <img src="./assets/images/female.svg" alt="User" class="profile-img" (click)="toggleProfilePanel($event)" />
+  </div>
+</header>
+
+<!-- Custom panel usage -->
+<app-custom-panel #panel>
+  <div class="profile-content-wrapper">
+    <div class="d-flex align-items-center">
+      <div class="coach-name me-1">Employee Name</div>
+      <div class="small d-flex align-items-center">
+        <span class="rating-text">4</span>
+        <img src="./assets/icons/rating-star.svg" alt="rating star" class="rating-star-icon" />
+      </div>
+    </div>
+    <div class="id-text">ID: 2323423</div>
+
+    <div class="general-details-wrapper">
+      <div class="details-heading"> General Details
+      </div>
+
+      <div class="detail-section d-flex justify-content-between">
+        <!-- Left section -->
+        <div class="left-section d-flex flex-column">
+          <div class="left-detail-text">Mail ID</div>
+          <div class="left-detail-text">DOB</div>
+          <div class="left-detail-text">Gender</div>
+          <div class="left-detail-text">Location</div>
+        </div>
+
+        <!-- Right section -->
+        <div class="right-section d-flex flex-column">
+          <div class="right-detail-text">Name@tvsmotor.com</div>
+          <div class="right-detail-text">24-05-1998</div>
+          <div class="right-detail-text">Male</div>
+          <div class="right-detail-text">Hosur</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="emergency-details-wrapper">
+      <div class="details-heading">
+        Emergency Contact Details
+      </div>
+      <div class="detail-section d-flex justify-content-between">
+        <!-- Left section -->
+        <div class="left-section d-flex flex-column">
+          <div class="left-detail-text">Mother</div>
+          <div class="left-detail-text">Spouse</div>
+        </div>
+
+        <!-- Right section -->
+        <div class="right-section d-flex flex-column">
+          <div class="right-detail-text">+91 676767XXXX</div>
+          <div class="right-detail-text">+91 676767XXXX</div>
+        </div>
+      </div>
+    </div>
+    <div class="version-wrapper">
+      <div class="verstion-text">
+        Version 1.2.3 <span class="new-release-text">(New Release)</span>
+      </div>
+    </div>
+  </div>
+</app-custom-panel>

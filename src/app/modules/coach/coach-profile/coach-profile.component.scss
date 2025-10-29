@@ -1,0 +1,19 @@
+@use 'profile' as *;
+
+
+.detail-section {
+  // gap: 1rem;
+  .left-section,
+  .right-section {
+    row-gap: 16px;
+  }
+
+}
+
+
+.coach-type{
+  font-family: 'Inter';
+  font-size: 0.875rem;
+  font-weight:500;
+  color:#006E08;
+}

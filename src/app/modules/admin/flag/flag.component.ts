@@ -11,7 +11,7 @@ import {
   ModalComponent,
   TextareaComponent,
 } from '@Digital-mfg/mhi-ui-components';
-import { MULTI_SELECT_OPTIONS, CARD_DATA,ICONS } from '@app/modules/admin/flag/flag-mock-data';
+import { MULTI_SELECT_OPTIONS, CARD_DATA, ICONS } from '@app/modules/admin/flag/flag-mock-data';
 
 @Component({
   selector: 'app-flag.component',
@@ -45,7 +45,7 @@ export class FlagComponent {
 
   private flagService = inject(FlagService);
 
-  multiSelectOptions  = MULTI_SELECT_OPTIONS;
+  multiSelectOptions = MULTI_SELECT_OPTIONS;
   cardData = CARD_DATA;
 
   openModal(card: DashboardCard) {

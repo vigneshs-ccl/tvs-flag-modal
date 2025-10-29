@@ -1,7 +1,10 @@
 import { Routes } from '@angular/router';
-import { AuthGuard } from './core/guards/auth.guard';
+import { AuthGuard } from '@app/core/guards/auth.guard';
 
-import { FlagComponent } from './modules/admin/flag/flag.component';
+import { FlagComponent } from '@app/modules/admin/flag/flag.component';
+import { ProfileComponent } from '@app/modules/employee/profile/profile.component';
+import { CoachProfileComponent } from '@app/modules/coach/coach-profile/coach-profile.component';
+import { AdminProfileComponent } from '@app/modules/admin/admin-profile/admin-profile.component';
 
 export const routes: Routes = [
   {
@@ -25,15 +28,27 @@ export const routes: Routes = [
   },
   {
     path: 'flag',
-    component:FlagComponent,
+    component: FlagComponent,
+  },
+  {
+    path: 'employee/profile',
+    component: ProfileComponent,
+  },
+  {
+    path: 'coach/profile',
+    component: CoachProfileComponent,
+  },
+  {
+    path: 'admin/profile',
+    component: AdminProfileComponent,
   },
   {
     path: '',
-    redirectTo: '/flag',
+    redirectTo: '/admin/profile',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: '/flag',
+    redirectTo: '/admin/profile',
   },
 ];

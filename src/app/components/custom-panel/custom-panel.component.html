@@ -1,0 +1,24 @@
+<div
+  *ngIf="isOpen"
+  class="custom-panel shadow-lg rounded-4 bg-white position-absolute"
+  [ngClass]="position"
+  (click)="$event.stopPropagation()"
+>
+  <div class="panel-image-wrapper position-relative">
+    <img src="assets/icons/profile-bg.png" alt="bg-image" class="panel-image" />
+    <div class="top-actions d-flex justify-content-between align-items-center">
+      <!-- Profile image -->
+      <img src="assets/images/female.svg" alt="Profile" class="profile-image" />
+
+      <!-- Logout button -->
+      <button class="btn btn-logout">Logout</button>
+    </div>
+  </div>
+  <div class="custom-panel-body">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="custom-panel-footer text-end" *ngIf="showCloseButton">
+    <button class="btn btn-outline" (click)="close()">Close</button>
+  </div>
+</div>

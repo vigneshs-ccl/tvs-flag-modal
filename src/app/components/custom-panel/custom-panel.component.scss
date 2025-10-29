@@ -1,0 +1,99 @@
+.custom-panel {
+  position: absolute;
+  width: 473px;
+  top: 40px; // adjust according to header height
+  // right: 25px;
+  z-index: 1050;
+  transition: all 0.3s ease-in-out;
+
+
+  //   // For smaller screens (tablet and below)
+  // @media (max-width: 992px) {
+  //   width: 380px;
+  //   right: 10px;
+  // }
+
+   // For mobile
+  @media (max-width: 500px) {
+    // position: fixed;
+    width: 100%;
+    top: 40px;
+    border-radius: 0;
+    overflow-y: auto;
+  }
+}
+
+
+.panel-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 150px;
+
+  @media (max-width: 500px) {
+    height: 100px;
+  }
+
+  img.panel-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .top-actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px; // py-cs-10 px-cs-16
+
+    .profile-image {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      border: 1px solid black;
+
+      @media (max-width: 500px) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+}
+
+// button outline
+
+.btn-outline {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 2px solid #5b2ae3;
+  border-radius: 20px;
+  color: #5B2AE3;
+  padding: 6px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'roboto';
+  transition: all 0.3s ease;
+
+}
+
+.btn-logout {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #5b2ae3;
+  border-radius: 20px;
+  color: #5B2AE3;
+  padding: 8px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'roboto';
+  transition: all 0.3s ease;
+
+}
+
+
+
+.custom-panel-footer{
+  padding-right: 24px;
+  padding-bottom: 16px;
+}
