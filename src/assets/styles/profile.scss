@@ -1,7 +1,7 @@
 .header {
-  background-color: #5B2AE3;
+  background-color: #5b2ae3;
   height: 48px;
-  padding:6px 24px;
+  padding: 6px 24px;
   .profile-img {
     width: 36px;
     height: 36px;
@@ -11,87 +11,97 @@
   }
 }
 
-.profile-content-wrapper{
-  padding:16px;
-  .general-details-wrapper{
+.profile-content-wrapper {
+  padding: 16px;
+  .general-details-wrapper {
     //pt-cs-16 mt-cs-16 pb-cs-10 ps-cs-14 pe-cs-24
-    padding:16px 8px 10px 14px;
+    padding: 16px 8px 10px 14px;
     margin-top: 16px;
-    background-color: #F8F9FA;
+    background-color: #f8f9fa;
     border-radius: 6px;
   }
 
-  .emergency-details-wrapper{
+  .emergency-details-wrapper {
     //pt-cs-16 mt-cs-16 pb-cs-10 ps-cs-14 pe-cs-8
-    padding:16px 12px 16px 14px;
-    background-color: #F8F9FA;
+    padding: 16px 12px 16px 14px;
+    background-color: #f8f9fa;
     margin-top: 11px;
     border-radius: 6px;
   }
 
-  .version-wrapper{
-    padding:6px 12px;
+  .version-wrapper {
+    padding: 6px 12px;
     margin-top: 16px;
-    background-color: #F8F9FA;
+    background-color: #f8f9fa;
     border-radius: 6px;
   }
 }
 
+.detail-section {
+  .left-section,
+  .right-section {
+    gap: 16px;
+  }
+}
 
 // typography
 
-.details-heading{
+.details-heading {
   color: #000000; // pure black
   font-weight: 500; // medium
   font-size: 0.875rem; // 14px -> 14 / 16 = 0.875rem
   margin-bottom: 16px;
 }
 
-.left-detail-text{
+.left-detail-text {
   color: #666666; // light black
   font-family: 'Roboto', sans-serif;
   font-weight: 400; // regular
   font-size: 0.75rem; // 12px -> rem
 }
 
-.right-detail-text{
+.right-detail-text {
   color: #191919; // black
   font-family: 'Roboto', sans-serif;
   font-weight: 400; // regular
   font-size: 0.8125rem; // 13px → 13/16 = 0.8125rem
 }
 
+.left-detail-text,
+.right-detail-text {
+  line-height: 1.25rem; // fixed consistent height
+}
 
-.coach-name{
-  color: #1F1F1F;
+.coach-name {
+  color: #1f1f1f;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 1rem;
 }
 
-.rating-text{
-  color: #FFA700; // yellow
+.rating-text {
+  color: #ffa700; // yellow
   font-family: 'Inter', sans-serif;
   font-weight: 500; // medium
   font-size: 0.9375rem; // 15px → 15/16 = 0.9375rem
 }
 
-.id-text{
+.id-text {
   color: #666666; // grey-dark
   font-family: 'Roboto', sans-serif;
   font-weight: 400; // regular
   font-size: 0.8125rem; // 13px → 13/16 = 0.8125rem
 }
 
-.verstion-text{
-  color: #0900E5; // blue-dark
+.verstion-text {
+  color: #0900e5; // blue-dark
   font-family: 'Roboto', sans-serif;
   font-weight: 400; // regular
   font-size: 0.75rem; // 12px → 12/16 = 0.75rem
 }
 
-.new-release-text{
-  color: #6E6E6E; // grey-mid
+.new-release-text {
+  color: #6e6e6e; // grey-mid
   font-family: 'Roboto', sans-serif;
   font-weight: 400; // regular
   font-size: 0.625rem; // 10px → 10/16 = 0.625rem

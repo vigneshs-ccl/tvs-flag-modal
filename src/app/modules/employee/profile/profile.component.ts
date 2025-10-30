@@ -12,7 +12,7 @@ export class ProfileComponent {
   @ViewChild('panel') panel!: CustomPanelComponent;
 
   toggleProfilePanel(event: Event) {
-    event.stopPropagation(); // ✅ Prevent immediate close
+    event.stopPropagation(); //Prevent immediate close
     this.panel.toggle();
   }
 }

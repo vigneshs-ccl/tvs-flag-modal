@@ -1,9 +1,8 @@
 import { CommonModule, NgClass } from '@angular/common';
 import { Component, ElementRef, HostListener, Input } from '@angular/core';
-
 @Component({
   selector: 'app-custom-panel',
-  imports: [NgClass,CommonModule],
+  imports: [NgClass, CommonModule],
   templateUrl: './custom-panel.component.html',
   styleUrls: ['./custom-panel.component.scss'],
 })

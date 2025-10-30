@@ -34,6 +34,11 @@ module.exports = [
         HTMLElement: 'readonly',
         setTimeout: 'readonly',
         localStorage: 'readonly',
+        window: 'readonly',
+        document: 'readonly',
+        Event: 'readonly',
+        MouseEvent: 'readonly',
+        Node: 'readonly',
       },
     },
     plugins: {

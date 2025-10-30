@@ -1,20 +1,18 @@
 .custom-panel {
   position: absolute;
-  width: 473px;
+  width: 400px;
   top: 40px; // adjust according to header height
-  // right: 25px;
   z-index: 1050;
   transition: all 0.3s ease-in-out;
-
-
+  border-radius: 0px;
   //   // For smaller screens (tablet and below)
   // @media (max-width: 992px) {
   //   width: 380px;
-  //   right: 10px;
+
   // }
 
-   // For mobile
-  @media (max-width: 500px) {
+  // For mobile
+  @media (max-width: 430px) {
     // position: fixed;
     width: 100%;
     top: 40px;
@@ -22,7 +20,6 @@
     overflow-y: auto;
   }
 }
-
 
 .panel-image-wrapper {
   position: relative;
@@ -60,7 +57,6 @@
       }
     }
   }
-
 }
 
 // button outline
@@ -69,31 +65,27 @@
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 2px solid #5b2ae3;
   border-radius: 20px;
-  color: #5B2AE3;
+  color: #5b2ae3;
   padding: 6px 20px;
   font-size: 0.875rem;
   font-weight: 500;
   font-family: 'roboto';
   transition: all 0.3s ease;
-
 }
 
 .btn-logout {
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #5b2ae3;
   border-radius: 20px;
-  color: #5B2AE3;
+  color: #5b2ae3;
   padding: 8px 20px;
   font-size: 0.875rem;
   font-weight: 500;
   font-family: 'roboto';
   transition: all 0.3s ease;
-
 }
 
-
-
-.custom-panel-footer{
+.custom-panel-footer {
   padding-right: 24px;
   padding-bottom: 16px;
 }
