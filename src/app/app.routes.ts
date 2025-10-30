@@ -5,6 +5,7 @@ import { FlagComponent } from '@app/modules/admin/flag/flag.component';
 import { ProfileComponent } from '@app/modules/employee/profile/profile.component';
 import { CoachProfileComponent } from '@app/modules/coach/coach-profile/coach-profile.component';
 import { AdminProfileComponent } from '@app/modules/admin/admin-profile/admin-profile.component';
+import { AddCoachComponent } from './modules/admin/add-coach/add-coach.component';
 
 export const routes: Routes = [
   {
@@ -43,12 +44,16 @@ export const routes: Routes = [
     component: AdminProfileComponent,
   },
   {
+    path: 'admin/add-coach',
+    component: AddCoachComponent,
+  },
+  {
     path: '',
-    redirectTo: '/admin/profile',
+    redirectTo: 'admin/add-coach',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: '/admin/profile',
+    redirectTo: 'admin/add-coach',
   },
 ];

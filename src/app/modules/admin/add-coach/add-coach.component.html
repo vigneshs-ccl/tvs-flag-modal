@@ -1,0 +1,192 @@
+<button class="btn btn-primary" (click)="openModal()">+Add Coach</button>
+
+<tvsm-modal [isOpen]="isOpen" (closed)="closeModal()" [title]="title" size="lg">
+  <div class="modal-content-wrap">
+    <div class="container-fluid mb-4">
+      <div class="modal-body-scroll">
+        <form [formGroup]="coachForm" class="coach-form">
+          <!-- Row 1 -->
+          <div class="sub-heading">Personal Details</div>
+          <div class="row mb-3">
+            <div class="col-lg-4 mb-3 mb-lg-0">
+              <label for="email" class="form-label"
+                >Coach Mail ID <span class="text-danger">*</span></label
+              >
+              <input
+                id="email"
+                type="email"
+                class="form-control custom-input"
+                formControlName="email"
+                placeholder="Enter email"
+                minlength="5"
+                maxlength="250"
+              />
+              <div
+                class="text-danger mt-1"
+                *ngIf="coachForm.get('email')?.invalid && coachForm.get('email')?.touched"
+              >
+                <small *ngIf="coachForm.get('email')?.errors?.['required']">
+                  Email is required.
+                </small>
+                <small *ngIf="coachForm.get('email')?.errors?.['email']">
+                  Enter a valid email address.
+                </small>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mb-3 mb-lg-0">
+              <label for="coachId" class="form-label">Coach ID</label>
+              <input
+                id="coachId"
+                type="text"
+                class="form-control custom-input"
+                formControlName="coachId"
+                placeholder="232323"
+                [disabled]="true"
+              />
+            </div>
+
+            <div class="col-lg-4">
+              <label for="gender" class="form-label">Gender</label>
+              <input
+                id="gender"
+                type="text"
+                class="form-control custom-input"
+                formControlName="gender"
+                placeholder="Male"
+              />
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="row row-2">
+            <div class="col-lg-4 mb-3 mb-lg-0">
+              <label for="coachName" class="form-label">Coach Name</label>
+              <input
+                id="coachName"
+                type="text"
+                class="form-control custom-input"
+                formControlName="coachName"
+                placeholder="Name"
+              />
+            </div>
+
+            <div class="col-lg-4 mb-3 mb-lg-0">
+              <label for="dob" class="form-label">DOB</label>
+              <input
+                id="dob"
+                type="text"
+                class="form-control custom-input"
+                formControlName="dob"
+                placeholder="DD-MM-YYYY"
+              />
+            </div>
+
+            <div class="col-lg-4">
+              <label for="mobile" class="form-label">Mobile Number</label>
+              <input
+                id="mobile"
+                type="text"
+                class="form-control custom-input"
+                formControlName="mobile"
+                placeholder="7010633323"
+              />
+            </div>
+          </div>
+          <div class="sub-heading">Professional Details</div>
+          <div class="row mb-3">
+            <div class="col-lg-4 mb-3 mb-lg-0">
+              <label for="location" class="form-label"
+                >Select Location<span class="text-danger">*</span></label
+              >
+              <tvsm-dropdown
+                [options]="multiSelectOptions"
+                placeholder="Select"
+                [searchable]="true"
+                [multiple]="true"
+                id="location"
+                [showCheckboxes]="true"
+                [filterIcon]="false"
+                searchPlaceholder="Search"
+                (selectionChange)="onMultiSelectChange($event)"
+                [searchIconContent]="searchIcon"
+                [arrowIconContent]="arrowIcon"
+              ></tvsm-dropdown>
+            </div>
+
+            <div class="col-lg-4 mb-3 mb-lg-0">
+              <label for="department" class="form-label"
+                >Select Department<span class="text-danger">*</span></label
+              >
+              <tvsm-dropdown
+                [options]="multiSelectOptions"
+                placeholder="Select"
+                [searchable]="true"
+                [multiple]="true"
+                id="department"
+                [showCheckboxes]="true"
+                [filterIcon]="false"
+                searchPlaceholder="Search"
+                (selectionChange)="onMultiSelectChange($event)"
+                [searchIconContent]="searchIcon"
+                [arrowIconContent]="arrowIcon"
+              ></tvsm-dropdown>
+            </div>
+
+            <div class="col-lg-4">
+              <label for="specialization" class="form-label"
+                >Coach Specialization<span class="text-danger">*</span></label
+              >
+              <tvsm-select
+                id="specialization"
+                [options]="specialization_options"
+                (selectionChange)="onSelectChange($event)"
+              >
+              </tvsm-select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4 mb-lg-0">
+              <label for="language" class="form-label"
+                >Select Language <span class="text-danger">*</span></label
+              >
+              <tvsm-dropdown
+                [options]="multiSelectOptions"
+                placeholder="Select"
+                [searchable]="true"
+                [multiple]="true"
+                id="language"
+                [showCheckboxes]="true"
+                [filterIcon]="false"
+                searchPlaceholder="Search"
+                (selectionChange)="onMultiSelectChange($event)"
+                [searchIconContent]="searchIcon"
+                [arrowIconContent]="arrowIcon"
+              ></tvsm-dropdown>
+            </div>
+
+            <div class="col mb-md-0">
+              <label for="department" class="form-label">Other Specialization</label>
+              <input
+                id="other-specialization"
+                type="text"
+                minlength="5"
+                maxlength="250"
+                class="form-control custom-input"
+                formControlName="email"
+                placeholder="Enter email"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal-actions d-flex align-items-center justify-content-center justify-content-sm-end"
+  >
+    <button class="btn btn-cancel">Cancel</button>
+    <button class="btn btn-primary">Submit</button>
+  </div>
+</tvsm-modal>

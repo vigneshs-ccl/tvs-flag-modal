@@ -1,0 +1,248 @@
+
+
+.btn-primary {
+  background-color: #5b2ae3;
+  color: #ffffff;
+  border: none;
+  padding: 7px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 21px;
+  transition: background-color 0.3s ease;
+
+}
+
+
+
+.btn-cancel {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 2px solid #FF0000;
+  border-radius: 20px;
+  color: #FF0000;
+  padding: 6px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+}
+
+.modal-actions{
+  column-gap: 1rem;
+  position: sticky;
+    bottom: 0;
+    background: #fff;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    z-index: 20;
+    flex-shrink: 0;
+}
+
+
+// modal styles
+::ng-deep.modal-content--lg{
+  max-width: 1000px!important;
+}
+
+::ng-deep .modal-title {
+  font-size: 1.125rem !important;
+  color: #212121 !important;
+  font-weight: 600 !important;
+}
+
+
+::ng-deep .modal-header {
+  padding: 1.25rem 1.25rem 1.25rem 1.25rem !important;
+  border-bottom: 0 !important;
+}
+
+::ng-deep .modal-body {
+  padding: 0.25rem 1.5rem 0rem 1.5rem !important;
+  // overflow-y: visible!important;
+  @media screen and (min-width: 769px) {
+    overflow-y: visible!important;
+
+  }
+}
+
+::ng-deep .modal-content{
+  overflow:visible!important;
+}
+
+::ng-deep .modal-close{
+  height: 2rem!important;
+  color: #4e4e4e !important;
+}
+
+.modal-content-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden!important; // prevent double scrollbars
+}
+
+
+// form styling
+
+.container-fluid{
+  padding:0px;
+}
+
+.form-label{
+  color:#8D8D8D;
+  font-weight: 400;
+  font-size: 0.875rem;
+  margin-bottom: 6px;
+}
+
+.form-control:disabled{
+  background-color: #F7F7F7!important;
+}
+
+.custom-input {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; // Regular
+  font-size: 0.875rem; // 14px
+  color: #909090; // optional, adjust as per design
+  opacity: 1;
+
+  border: 0.5px solid #cbcbcb;
+  border-radius: 20px;
+  padding: 0.5rem 0.875rem;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+
+  &::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #999999; // subtle placeholder color
+  }
+
+  &:focus {
+    border: 1px solid #183883;
+    outline: none;
+    box-shadow: none;
+  }
+
+  // &:hover {
+  //   border-color: #183883; // optional: highlight slightly on hover
+  // }
+}
+
+.sub-heading{
+  font-weight: 400;
+  color:#4A4A4A;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.row-2{
+  margin-bottom: 32px;
+}
+
+
+/* ───────────────  MULTISELECT  ─────────────── */
+::ng-deep .tvsm-dropdown__trigger:hover {
+  border: 1px solid #c0c0c1 !important;
+}
+
+::ng-deep .tvsm-dropdown__trigger--open {
+  border: 1px solid #183883 !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .tvsm-dropdown__search-input {
+  border: 1px solid #c0c0c1 !important;
+
+  &:focus {
+    border-color: #183883 !important;
+  }
+}
+
+::ng-deep .tvsm-dropdown .tvsm-dropdown__display-text {
+  color: #909090 !important;
+}
+
+
+// single select styles
+
+::ng-deep .tvsm-select {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important; /* Regular */
+  font-size: 0.875rem !important;
+  color: #909090 !important;
+  opacity: 1 !important;
+
+  border: 0.5px solid #cbcbcb !important;
+  border-radius: 20px !important;
+  padding: 0.5rem 1rem !important;
+  background-color: #fff !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease !important;
+  outline: none !important;
+  background-image: none!important;
+  /* For placeholder / selected text inside */
+  .tvsm-select-placeholder,
+  .tvsm-select-value {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 0.875rem !important;
+    color: #000 !important;
+    opacity: 1 !important;
+  }
+}
+
+::ng-deep.tvsm-select-container{
+	border:none!important;
+	background-color:transparent!important;
+}
+
+
+
+/* Fix for medium screens (tablet range 769px–992px) */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  ::ng-deep .modal-content {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 85vh !important; /* Keeps modal in viewport */
+    overflow: hidden !important;
+  }
+
+  .modal-content-wrap {
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+  }
+
+ /* Scrollable section */
+.modal-body-scroll {
+  flex: 1 1 auto;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+  max-height: calc(100vh - 220px); /* Adjust based on header/footer */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+
+  /* Hide X scroll completely for all devices */
+  &::-webkit-scrollbar {
+    height: 0 !important;
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+  .modal-actions {
+    position: sticky !important;
+    bottom: 0 !important;
+    background: #fff !important;
+    z-index: 20 !important;
+  }
+}
