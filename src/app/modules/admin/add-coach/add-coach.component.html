@@ -2,8 +2,8 @@
 
 <tvsm-modal [isOpen]="isOpen" (closed)="closeModal()" [title]="title" size="lg">
   <div class="modal-content-wrap">
-    <div class="container-fluid mb-4">
-      <div class="modal-body-scroll">
+    <div class="container-fluid">
+      <div class="modal-body-scroll" #modalScroll>
         <form [formGroup]="coachForm" class="coach-form">
           <!-- Row 1 -->
           <div class="sub-heading">Personal Details</div>
@@ -20,6 +20,7 @@
                 placeholder="Enter email"
                 minlength="5"
                 maxlength="250"
+                (blur)="onEmailBlur()"
               />
               <div
                 class="text-danger mt-1"
@@ -32,6 +33,14 @@
                   Enter a valid email address.
                 </small>
               </div>
+              <!-- Coach not found message -->
+              <div class="text-danger mt-1" *ngIf="emailNotFound">
+                <small>No coach data found for this email.</small>
+              </div>
+
+              <div class="text-danger mt-1" *ngIf="emailAlreadyExists">
+                <small>Coach already added.</small>
+              </div>
             </div>
 
             <div class="col-lg-4 mb-3 mb-lg-0">
@@ -41,8 +50,8 @@
                 type="text"
                 class="form-control custom-input"
                 formControlName="coachId"
-                placeholder="232323"
                 [disabled]="true"
+                placeholder=""
               />
             </div>
 
@@ -53,7 +62,7 @@
                 type="text"
                 class="form-control custom-input"
                 formControlName="gender"
-                placeholder="Male"
+                placeholder=""
               />
             </div>
           </div>
@@ -67,7 +76,7 @@
                 type="text"
                 class="form-control custom-input"
                 formControlName="coachName"
-                placeholder="Name"
+                placeholder=""
               />
             </div>
 
@@ -78,7 +87,7 @@
                 type="text"
                 class="form-control custom-input"
                 formControlName="dob"
-                placeholder="DD-MM-YYYY"
+                placeholder=""
               />
             </div>
 
@@ -89,7 +98,7 @@
                 type="text"
                 class="form-control custom-input"
                 formControlName="mobile"
-                placeholder="7010633323"
+                placeholder=""
               />
             </div>
           </div>
@@ -97,10 +106,10 @@
           <div class="row mb-3">
             <div class="col-lg-4 mb-3 mb-lg-0">
               <label for="location" class="form-label"
-                >Select Location<span class="text-danger">*</span></label
+                >Select Location <span class="text-danger">*</span></label
               >
               <tvsm-dropdown
-                [options]="multiSelectOptions"
+                [options]="locationOptions"
                 placeholder="Select"
                 [searchable]="true"
                 [multiple]="true"
@@ -108,18 +117,27 @@
                 [showCheckboxes]="true"
                 [filterIcon]="false"
                 searchPlaceholder="Search"
-                (selectionChange)="onMultiSelectChange($event)"
+                (selectionChange)="onMultiSelectChange($event, 'location')"
                 [searchIconContent]="searchIcon"
                 [arrowIconContent]="arrowIcon"
               ></tvsm-dropdown>
+              <!--  Validation Message -->
+              <div
+                class="text-danger mt-1"
+                *ngIf="coachForm.get('location')?.invalid && coachForm.get('location')?.touched"
+              >
+                <small *ngIf="coachForm.get('location')?.errors?.['required']">
+                  Location is required.
+                </small>
+              </div>
             </div>
 
             <div class="col-lg-4 mb-3 mb-lg-0">
               <label for="department" class="form-label"
-                >Select Department<span class="text-danger">*</span></label
+                >Select Department <span class="text-danger">*</span></label
               >
               <tvsm-dropdown
-                [options]="multiSelectOptions"
+                [options]="departmentOptions"
                 placeholder="Select"
                 [searchable]="true"
                 [multiple]="true"
@@ -127,32 +145,48 @@
                 [showCheckboxes]="true"
                 [filterIcon]="false"
                 searchPlaceholder="Search"
-                (selectionChange)="onMultiSelectChange($event)"
+                (selectionChange)="onMultiSelectChange($event, 'department')"
                 [searchIconContent]="searchIcon"
                 [arrowIconContent]="arrowIcon"
               ></tvsm-dropdown>
+              <div
+                class="text-danger mt-1"
+                *ngIf="coachForm.get('department')?.invalid && coachForm.get('department')?.touched"
+              >
+                <small>Department is required.</small>
+              </div>
             </div>
 
             <div class="col-lg-4">
               <label for="specialization" class="form-label"
-                >Coach Specialization<span class="text-danger">*</span></label
+                >Coach Specialization <span class="text-danger">*</span></label
               >
               <tvsm-select
+                #specializationSelect
                 id="specialization"
                 [options]="specialization_options"
                 (selectionChange)="onSelectChange($event)"
               >
               </tvsm-select>
+              <div
+                class="text-danger mt-1"
+                *ngIf="
+                  coachForm.get('specialization')?.invalid &&
+                  coachForm.get('specialization')?.touched
+                "
+              >
+                <small>Specialization is required.</small>
+              </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-lg-4 mb-lg-0">
+            <div class="col-lg-4 mb-3 mb-lg-0">
               <label for="language" class="form-label"
                 >Select Language <span class="text-danger">*</span></label
               >
               <tvsm-dropdown
-                [options]="multiSelectOptions"
+                [options]="languageOptions"
                 placeholder="Select"
                 [searchable]="true"
                 [multiple]="true"
@@ -160,13 +194,19 @@
                 [showCheckboxes]="true"
                 [filterIcon]="false"
                 searchPlaceholder="Search"
-                (selectionChange)="onMultiSelectChange($event)"
+                (selectionChange)="onMultiSelectChange($event, 'language')"
                 [searchIconContent]="searchIcon"
                 [arrowIconContent]="arrowIcon"
               ></tvsm-dropdown>
+              <div
+                class="text-danger mt-1"
+                *ngIf="coachForm.get('language')?.invalid && coachForm.get('language')?.touched"
+              >
+                <small>Language is required.</small>
+              </div>
             </div>
 
-            <div class="col mb-md-0">
+            <div class="col mb-1 mb-lg-0">
               <label for="department" class="form-label">Other Specialization</label>
               <input
                 id="other-specialization"
@@ -174,9 +214,24 @@
                 minlength="5"
                 maxlength="250"
                 class="form-control custom-input"
-                formControlName="email"
-                placeholder="Enter email"
+                formControlName="otherSpecialization"
+                placeholder="Enter other specialization"
               />
+              <div
+                class="text-danger mt-1"
+                *ngIf="
+                  coachForm.get('otherSpecialization')?.touched &&
+                  coachForm.get('otherSpecialization')?.value &&
+                  coachForm.get('otherSpecialization')?.invalid
+                "
+              >
+                <small *ngIf="coachForm.get('otherSpecialization')?.errors?.['minlength']">
+                  Minimum 5 characters required.
+                </small>
+                <small *ngIf="coachForm.get('otherSpecialization')?.errors?.['maxlength']">
+                  Maximum 250 characters allowed.
+                </small>
+              </div>
             </div>
           </div>
         </form>
@@ -186,7 +241,32 @@
   <div
     class="modal-actions d-flex align-items-center justify-content-center justify-content-sm-end"
   >
-    <button class="btn btn-cancel">Cancel</button>
-    <button class="btn btn-primary">Submit</button>
+    <button class="btn btn-cancel" (click)="closeModal()">Cancel</button>
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
   </div>
 </tvsm-modal>
+
+<!-- 👇 List of added coaches -->
+<div class="container mt-4" *ngIf="coachList.length > 0">
+  <h5 class="mb-3">Added Coaches</h5>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-light">
+        <tr>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let coach of coachList">
+          <td>{{ coach.email }}</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm" (click)="enableEditMode(coach)">
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
