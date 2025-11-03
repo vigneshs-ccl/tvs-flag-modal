@@ -103,10 +103,56 @@ export class AddCoachComponent implements OnChanges {
       otherSpecialization: coach.otherSpecialization || '',
     });
 
-    // Store selected dropdown values
-    this.selectedLocations = coach.location ?? [];
-    this.selectedDepartments = coach.department ?? [];
-    this.selectedLanguages = coach.language ?? [];
+    // 🔹 Handle both string[] and DropdownOption[] safely
+    const normalizeToDropdownOptions = (values: unknown): DropdownOption[] => {
+      if (!values) return [];
+      if (Array.isArray(values)) {
+        // Case 1: values are strings
+        if (typeof values[0] === 'string') {
+          const strValues = values as string[];
+          return OPTIONS_MULTISELECT.filter((opt) => strValues.includes(opt.value)).map((opt) => ({
+            ...opt,
+            selected: true,
+          }));
+        }
+
+        // Case 2: values are already DropdownOption[]
+        const opts = values as DropdownOption[];
+        return OPTIONS_MULTISELECT.map((opt) => ({
+          ...opt,
+          selected: opts.some((sel) => sel.value === opt.value),
+        }));
+      }
+      return [];
+    };
+
+    //  Convert stored values into DropdownOption[] always
+    this.selectedLocations = normalizeToDropdownOptions(coach.location);
+    this.selectedDepartments = normalizeToDropdownOptions(coach.department);
+    this.selectedLanguages = normalizeToDropdownOptions(coach.language);
+
+    // Reassign updated option arrays to trigger UI refresh
+    this.locationOptions = OPTIONS_MULTISELECT.map((opt) => ({
+      ...opt,
+      selected: this.selectedLocations.some((sel) => sel.value === opt.value),
+    }));
+
+    this.departmentOptions = OPTIONS_MULTISELECT.map((opt) => ({
+      ...opt,
+      selected: this.selectedDepartments.some((sel) => sel.value === opt.value),
+    }));
+
+    this.languageOptions = OPTIONS_MULTISELECT.map((opt) => ({
+      ...opt,
+      selected: this.selectedLanguages.some((sel) => sel.value === opt.value),
+    }));
+
+    // ✅ Update the form control values
+    this.coachForm.patchValue({
+      location: this.selectedLocations,
+      department: this.selectedDepartments,
+      language: this.selectedLanguages,
+    });
 
     // 🔹 Set specialization dropdown (custom component)
     if (this.specializationSelect && coach.specialization) {
@@ -132,7 +178,7 @@ export class AddCoachComponent implements OnChanges {
     // Reset modal state
     this.isEditMode = false;
     this.isOpen = false;
-    this.title = 'Add New Coach'; // 👈 restore title
+    this.title = 'Add New Coach'; // restore title
 
     // Re-enable email field for new coach mode
     this.coachForm.get('email')?.enable();
