@@ -1,0 +1,103 @@
+<header
+  class="header d-flex align-items-center justify-content-between py-cs-6 px-cs-24 position-relative"
+>
+  <div class="text-white">
+    <!-- Title text goes here -->
+    My Health Index
+  </div>
+</header>
+
+<nav class="d-none d-md-flex">
+  <ul class="nav-list">
+    <li><a href="#">Beneficiaries</a></li>
+    <li><a href="#">Coaches</a></li>
+    <li><a href="#" class="active">Surveys</a></li>
+    <li><a href="#">Announcements</a></li>
+  </ul>
+</nav>
+
+<div class="survey-form-wrap d-flex justify-content-center w-100">
+  <div class="survey-container">
+    <div class="d-flex justify-content-between">
+      <button class="back-btn">Back</button>
+      <button class="publish-btn">Publish</button>
+    </div>
+    <div class="form-heading">Create New Survey</div>
+    <form class="survey-form" [formGroup]="surveyForm">
+      <div class="row g-3">
+        <div class="col-lg-4 col-md-6 col-12">
+          <!-- select surevey Type -->
+          <label for="surveyType" class="form-label">Select Survey Type</label>
+          <tvsm-select
+            #surveyType
+            id="surveyType"
+            [options]="survey_type"
+            (selectionChange)="onSelectChange($event)"
+          >
+          </tvsm-select>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <!-- select coach grp -->
+          <label for="coach_group" class="form-label">Select Language</label>
+          <tvsm-dropdown
+            [options]="coach_group"
+            placeholder="Select"
+            [searchable]="true"
+            [multiple]="true"
+            id="coach_group"
+            [showCheckboxes]="true"
+            [filterIcon]="false"
+            searchPlaceholder="Search"
+            [searchIconContent]="searchIcon"
+            [arrowIconContent]="arrowIcon"
+          ></tvsm-dropdown>
+        </div>
+      </div>
+
+      <div>
+        <!-- survey description -->
+        <label for="description" class="form-label">Select Language</label>
+        <tvsm-textarea maxlength="250" name="description"> </tvsm-textarea>
+      </div>
+
+      <div>
+        <!-- Email notification -->
+        <label class="form-label d-block" for="email-notification">Email Notification</label>
+        <div class="form-check form-switch toggle-section mt-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="email-notification"
+            [checked]="isEmailEnabled"
+            (change)="toggleEmailNotification()"
+          />
+          @if (isEmailEnabled) {
+            <div class="d-flex column-gap-2 align-items-center">
+              <select
+                id="timing"
+                class="form-select custom-timing-select"
+                formControlName="timing"
+                (change)="onSelectChangeTiming($event)"
+              >
+                <option value="" disabled selected>Select</option>
+                <option *ngFor="let option of timing" [value]="option.label">
+                  {{ option.label }}
+                </option>
+              </select>
+              <div class="timing-text">before survey starts</div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div>
+        <!-- Add questions section -->
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button class="add-question-btn">Add Question</button>
+      </div>
+    </form>
+  </div>
+</div>

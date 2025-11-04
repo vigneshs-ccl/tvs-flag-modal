@@ -5,11 +5,6 @@
   z-index: 1050;
   transition: all 0.3s ease-in-out;
   border-radius: 0px;
-  //   // For smaller screens (tablet and below)
-  // @media (max-width: 992px) {
-  //   width: 380px;
-
-  // }
 
   // For mobile
   @media (max-width: 430px) {
@@ -88,4 +83,124 @@
 .custom-panel-footer {
   padding-right: 24px;
   padding-bottom: 16px;
+}
+
+
+
+// profile section styles
+.header {
+  background-color: #5b2ae3;
+  height: 48px;
+  padding: 6px 24px;
+  .profile-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    // object-fit: cover;
+    cursor: pointer;
+  }
+}
+
+.profile-content-wrapper {
+  padding: 16px;
+  .general-details-wrapper {
+    //pt-cs-16 mt-cs-16 pb-cs-10 ps-cs-14 pe-cs-24
+    padding: 16px 8px 10px 14px;
+    margin-top: 16px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+  }
+
+  .emergency-details-wrapper {
+    //pt-cs-16 mt-cs-16 pb-cs-10 ps-cs-14 pe-cs-8
+    padding: 16px 12px 16px 14px;
+    background-color: #f8f9fa;
+    margin-top: 11px;
+    border-radius: 6px;
+  }
+
+  .version-wrapper {
+    padding: 6px 12px;
+    margin-top: 16px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+  }
+}
+
+.detail-section {
+  .left-section,
+  .right-section {
+    gap: 16px;
+  }
+}
+
+// typography
+
+.details-heading {
+  color: #000000; // pure black
+  font-weight: 500; // medium
+  font-size: 0.875rem; // 14px -> 14 / 16 = 0.875rem
+  margin-bottom: 16px;
+}
+
+.left-detail-text {
+  color: #666666; // light black
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; // regular
+  font-size: 0.75rem; // 12px -> rem
+}
+
+.right-detail-text {
+  color: #191919; // black
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; // regular
+  font-size: 0.8125rem; // 13px → 13/16 = 0.8125rem
+}
+
+.left-detail-text,
+.right-detail-text {
+  line-height: 1.25rem; // fixed consistent height
+}
+
+.coach-name {
+  color: #1f1f1f;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.coach-type{
+  font-family: 'Inter';
+  font-size: 0.875rem;
+  font-weight:500;
+  color:#006E08;
+  padding-right: 8px;
+}
+
+.rating-text {
+  color: #ffa700; // yellow
+  font-family: 'Inter', sans-serif;
+  font-weight: 500; // medium
+  font-size: 0.9375rem; // 15px → 15/16 = 0.9375rem
+}
+
+.id-text {
+  color: #666666; // grey-dark
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; // regular
+  font-size: 0.8125rem; // 13px → 13/16 = 0.8125rem
+}
+
+.verstion-text {
+  color: #0900e5; // blue-dark
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; // regular
+  font-size: 0.75rem; // 12px → 12/16 = 0.75rem
+}
+
+.new-release-text {
+  color: #6e6e6e; // grey-mid
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; // regular
+  font-size: 0.625rem; // 10px → 10/16 = 0.625rem
 }

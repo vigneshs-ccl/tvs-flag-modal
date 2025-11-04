@@ -9,6 +9,7 @@ import { Component, ElementRef, HostListener, Input } from '@angular/core';
 export class CustomPanelComponent {
   @Input() position: string = 'end-0 mt-2'; // allows positioning (e.g., right, left)
   @Input() showCloseButton: boolean = true;
+  userRole: 'admin' | 'coach' | 'employee' = 'employee';
 
   isOpen = false;
 
@@ -32,5 +33,10 @@ export class CustomPanelComponent {
     if (!this.eRef.nativeElement.contains(event.target)) {
       this.isOpen = false;
     }
+  }
+
+  toggleProfilePanel(event: Event) {
+    event.stopPropagation();
+    this.isOpen = !this.isOpen;
   }
 }

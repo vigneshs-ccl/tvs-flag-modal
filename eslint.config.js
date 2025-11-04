@@ -32,6 +32,7 @@ module.exports = [
         jasmine: 'readonly',
         spyOn: 'readonly',
         HTMLElement: 'readonly',
+        HTMLSelectElement: 'readonly',
         setTimeout: 'readonly',
         localStorage: 'readonly',
         window: 'readonly',

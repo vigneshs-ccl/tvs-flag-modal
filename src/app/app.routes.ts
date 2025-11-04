@@ -6,6 +6,8 @@ import { ProfileComponent } from '@app/modules/employee/profile/profile.componen
 import { CoachProfileComponent } from '@app/modules/coach/coach-profile/coach-profile.component';
 import { AdminProfileComponent } from '@app/modules/admin/admin-profile/admin-profile.component';
 import { AddCoachComponent } from './modules/admin/add-coach/add-coach.component';
+import { SurveyFormComponents } from './modules/admin/survey-form/survey-form.components';
+import { CustomPanelComponent } from './components/custom-panel/custom-panel.component';
 
 export const routes: Routes = [
   {
@@ -28,6 +30,10 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path:'profile',
+    component:CustomPanelComponent
+  },
+  {
     path: 'flag',
     component: FlagComponent,
   },
@@ -48,12 +54,16 @@ export const routes: Routes = [
     component: AddCoachComponent,
   },
   {
+    path: 'survey-form',
+    component: SurveyFormComponents,
+  },
+  {
     path: '',
-    redirectTo: 'admin/add-coach',
+    redirectTo: 'survey-form',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'admin/add-coach',
+    redirectTo: 'survey-form',
   },
 ];

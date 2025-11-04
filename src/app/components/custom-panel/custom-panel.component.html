@@ -1,9 +1,13 @@
-<div
-  *ngIf="isOpen"
-  class="custom-panel shadow-lg bg-white position-absolute rounded-1"
-  [ngClass]="position"
-  (click)="$event.stopPropagation()"
->
+<header class="header d-flex align-items-center justify-content-between position-relative">
+  <div class="text-white">My Health Index</div>
+
+  <div class="header-profile">
+    <img src="./assets/images/female.svg" alt="User" class="profile-img" (click)="toggleProfilePanel($event)" />
+  </div>
+</header>
+
+<div #panel *ngIf="isOpen" class="custom-panel shadow-lg bg-white position-absolute rounded-1" [ngClass]="position"
+  (click)="$event.stopPropagation()">
   <div class="panel-image-wrapper position-relative">
     <img src="assets/icons/profile-bg.png" alt="bg-image" class="panel-image" />
     <div class="top-actions d-flex justify-content-between align-items-center">
@@ -15,7 +19,136 @@
     </div>
   </div>
   <div class="custom-panel-body">
-    <ng-content></ng-content>
+    <div class="profile-content-wrapper">
+      @if (userRole === 'admin') {
+      <div class="d-flex align-items-center">
+        <div class="coach-name me-1">Admin Name</div>
+        <div class="small d-flex align-items-center">
+          <span class="rating-text">4</span>
+          <img src="./assets/icons/rating-star.svg" alt="rating star" class="rating-star-icon" />
+        </div>
+      </div>
+      <div class="id-text">ID: 2323423</div>
+      <div class="general-details-wrapper">
+        <!-- <div class="details-heading"> General Details
+        </div> -->
+
+        <div class="detail-section d-flex justify-content-between align-items-center">
+          <!-- Left section -->
+          <div class="left-section d-flex flex-column">
+            <div class="left-detail-text">Mail ID</div>
+            <div class="left-detail-text">DOB</div>
+            <div class="left-detail-text">Gender</div>
+            <div class="left-detail-text">Location</div>
+          </div>
+
+          <!-- Right section -->
+          <div class="right-section d-flex flex-column">
+            <div class="right-detail-text">Name&#64;tvsmotor.com</div>
+            <div class="right-detail-text">24-05-1998</div>
+            <div class="right-detail-text">Male</div>
+            <div class="right-detail-text">Hosur</div>
+          </div>
+        </div>
+      </div>
+      }
+
+      @if (userRole === 'employee') {
+      <div class="d-flex align-items-center">
+        <div class="coach-name me-1">Employee Name</div>
+        <div class="small d-flex align-items-center">
+          <span class="rating-text">4</span>
+          <img src="./assets/icons/rating-star.svg" alt="rating star" class="rating-star-icon" />
+        </div>
+      </div>
+      <div class="id-text">ID: 2323423</div>
+
+      <div class="general-details-wrapper">
+        <div class="details-heading">General Details</div>
+
+        <div class="detail-section d-flex justify-content-between align-items-center">
+          <!-- Left section -->
+          <div class="left-section d-flex flex-column">
+            <div class="left-detail-text">Mail ID</div>
+            <div class="left-detail-text">DOB</div>
+            <div class="left-detail-text">Gender</div>
+            <div class="left-detail-text">Location</div>
+          </div>
+
+          <!-- Right section -->
+          <div class="right-section d-flex flex-column">
+            <div class="right-detail-text">Name&#64;tvsmotor.com</div>
+            <div class="right-detail-text">24-05-1998</div>
+            <div class="right-detail-text">Male</div>
+            <div class="right-detail-text">Hosur</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="emergency-details-wrapper">
+        <div class="details-heading">Emergency Contact Details</div>
+        <div class="detail-section d-flex justify-content-between align-items-center">
+          <!-- Left section -->
+          <div class="left-section d-flex flex-column">
+            <div class="left-detail-text">Mother</div>
+            <div class="left-detail-text">Spouse</div>
+          </div>
+
+          <!-- Right section -->
+          <div class="right-section d-flex flex-column">
+            <div class="right-detail-text">+91 676767XXXX</div>
+            <div class="right-detail-text">+91 676767XXXX</div>
+          </div>
+        </div>
+      </div>
+      }
+
+      @if(userRole === 'coach'){
+      <div class="d-flex align-items-center">
+        <div class="coach-name me-1">Coach Name</div>
+        <div class="small d-flex align-items-center">
+          <span class="rating-text">4</span>
+          <img src="./assets/icons/rating-star.svg" alt="rating star" class="rating-star-icon" />
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+
+        <div class="id-text">ID: 2323423</div>
+        <div class="coach-type">Physical Wellbeing</div>
+      </div>
+
+      <div class="general-details-wrapper">
+        <!-- <div class="details-heading"> General Details
+      </div> -->
+
+        <div class="detail-section d-flex justify-content-between">
+          <!-- Left section -->
+          <div class="left-section d-flex flex-column">
+            <div class="left-detail-text">Mail ID</div>
+            <div class="left-detail-text">DOB</div>
+            <div class="left-detail-text">Gender</div>
+            <div class="left-detail-text">Location</div>
+            <div class="left-detail-text">Department</div>
+          </div>
+
+          <!-- Right section -->
+          <div class="right-section d-flex flex-column">
+            <div class="right-detail-text">Name@tvsmotor.com</div>
+            <div class="right-detail-text">24-05-1998</div>
+            <div class="right-detail-text">Male</div>
+            <div class="right-detail-text">Hosur</div>
+            <div class="right-detail-text">D&AI, HR, PED</div>
+          </div>
+        </div>
+      </div>
+      }
+
+      <div class="version-wrapper">
+        <div class="verstion-text">
+          Version 1.2.3 <span class="new-release-text">(New Release)</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="custom-panel-footer text-end" *ngIf="showCloseButton">

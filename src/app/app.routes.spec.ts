@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { App } from './app';
 import { AuthGuard } from './core/guards/auth.guard';
 
 describe('App Routes', () => {

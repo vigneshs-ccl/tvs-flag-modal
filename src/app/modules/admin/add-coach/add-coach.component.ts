@@ -147,7 +147,7 @@ export class AddCoachComponent implements OnChanges {
       selected: this.selectedLanguages.some((sel) => sel.value === opt.value),
     }));
 
-    // ✅ Update the form control values
+    //  Update the form control values
     this.coachForm.patchValue({
       location: this.selectedLocations,
       department: this.selectedDepartments,
