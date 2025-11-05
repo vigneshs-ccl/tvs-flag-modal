@@ -1,18 +1,14 @@
 .custom-panel {
   position: absolute;
   width: 400px;
-  top: 40px; // adjust according to header height
+  top: 40px;
   z-index: 1050;
   transition: all 0.3s ease-in-out;
   border-radius: 0px;
 
   // For mobile
   @media (max-width: 430px) {
-    // position: fixed;
     width: 100%;
-    top: 40px;
-    border-radius: 0;
-    overflow-y: auto;
   }
 }
 
@@ -21,16 +17,12 @@
   width: 100%;
   height: 150px;
 
-  @media (max-width: 500px) {
-    height: 100px;
-  }
-
   img.panel-image {
     width: 100%;
     height: 100%;
   }
 
-  .top-actions {
+  .top-section {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,18 +30,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 16px; // py-cs-10 px-cs-16
+    padding: 10px 16px; 
 
     .profile-image {
       width: 132px;
       height: 132px;
       border-radius: 50%;
       border: 1px solid black;
-
-      @media (max-width: 500px) {
-        width: 80px;
-        height: 80px;
-      }
     }
   }
 }
@@ -85,8 +72,6 @@
   padding-bottom: 16px;
 }
 
-
-
 // profile section styles
 .header {
   background-color: #5b2ae3;
@@ -96,7 +81,6 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    // object-fit: cover;
     cursor: pointer;
   }
 }
@@ -104,7 +88,6 @@
 .profile-content-wrapper {
   padding: 16px;
   .general-details-wrapper {
-    //pt-cs-16 mt-cs-16 pb-cs-10 ps-cs-14 pe-cs-24
     padding: 16px 8px 10px 14px;
     margin-top: 16px;
     background-color: #f8f9fa;
@@ -112,7 +95,6 @@
   }
 
   .emergency-details-wrapper {
-    //pt-cs-16 mt-cs-16 pb-cs-10 ps-cs-14 pe-cs-8
     padding: 16px 12px 16px 14px;
     background-color: #f8f9fa;
     margin-top: 11px;
@@ -135,42 +117,41 @@
 }
 
 // typography
-
 .details-heading {
-  color: #000000; // pure black
-  font-weight: 500; // medium
-  font-size: 0.875rem; // 14px -> 14 / 16 = 0.875rem
+  color: #000000; 
+  font-weight: 500; 
+  font-size: 0.875rem;
   margin-bottom: 16px;
 }
 
 .left-detail-text {
-  color: #666666; // light black
+  color: #666666; 
   font-family: 'Roboto', sans-serif;
-  font-weight: 400; // regular
-  font-size: 0.75rem; // 12px -> rem
+  font-weight: 400; 
+  font-size: 0.75rem; 
 }
 
 .right-detail-text {
-  color: #191919; // black
+  color: #191919; 
   font-family: 'Roboto', sans-serif;
-  font-weight: 400; // regular
-  font-size: 0.8125rem; // 13px → 13/16 = 0.8125rem
+  font-weight: 400; 
+  font-size: 0.8125rem; 
 }
 
 .left-detail-text,
 .right-detail-text {
-  line-height: 1.25rem; // fixed consistent height
+  line-height: 1.25rem; 
 }
 
 .coach-name {
   color: #1f1f1f;
-  font-family: 'Inter', sans-serif;
+
   font-weight: 500;
   font-size: 1rem;
 }
 
 .coach-type{
-  font-family: 'Inter';
+
   font-size: 0.875rem;
   font-weight:500;
   color:#006E08;
@@ -178,29 +159,29 @@
 }
 
 .rating-text {
-  color: #ffa700; // yellow
+  color: #ffa700; 
   font-family: 'Inter', sans-serif;
-  font-weight: 500; // medium
-  font-size: 0.9375rem; // 15px → 15/16 = 0.9375rem
+  font-weight: 500; 
+  font-size: 0.9375rem; 
 }
 
 .id-text {
-  color: #666666; // grey-dark
+  color: #666666; 
   font-family: 'Roboto', sans-serif;
-  font-weight: 400; // regular
-  font-size: 0.8125rem; // 13px → 13/16 = 0.8125rem
+  font-weight: 400; 
+  font-size: 0.8125rem; 
 }
 
 .verstion-text {
-  color: #0900e5; // blue-dark
+  color: #0900e5; 
   font-family: 'Roboto', sans-serif;
-  font-weight: 400; // regular
-  font-size: 0.75rem; // 12px → 12/16 = 0.75rem
+  font-weight: 400; 
+  font-size: 0.75rem; 
 }
 
 .new-release-text {
-  color: #6e6e6e; // grey-mid
+  color: #6e6e6e; 
   font-family: 'Roboto', sans-serif;
-  font-weight: 400; // regular
-  font-size: 0.625rem; // 10px → 10/16 = 0.625rem
+  font-weight: 400; 
+  font-size: 0.625rem; 
 }

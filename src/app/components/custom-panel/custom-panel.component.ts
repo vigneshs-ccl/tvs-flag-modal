@@ -1,15 +1,15 @@
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, HostListener, Input } from '@angular/core';
 @Component({
   selector: 'app-custom-panel',
-  imports: [NgClass, CommonModule],
+  imports: [CommonModule],
   templateUrl: './custom-panel.component.html',
   styleUrls: ['./custom-panel.component.scss'],
 })
 export class CustomPanelComponent {
-  @Input() position: string = 'end-0 mt-2'; // allows positioning (e.g., right, left)
   @Input() showCloseButton: boolean = true;
-  userRole: 'admin' | 'coach' | 'employee' = 'employee';
+
+  userRole: 'admin' | 'coach' | 'employee' = 'coach';
 
   isOpen = false;
 

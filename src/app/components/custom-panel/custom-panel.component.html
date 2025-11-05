@@ -6,11 +6,11 @@
   </div>
 </header>
 
-<div #panel *ngIf="isOpen" class="custom-panel shadow-lg bg-white position-absolute rounded-1" [ngClass]="position"
+<div #panel *ngIf="isOpen" class="custom-panel shadow-lg bg-white position-absolute rounded-1 end-0 mt-2"
   (click)="$event.stopPropagation()">
   <div class="panel-image-wrapper position-relative">
     <img src="assets/icons/profile-bg.png" alt="bg-image" class="panel-image" />
-    <div class="top-actions d-flex justify-content-between align-items-center">
+    <div class="top-section d-flex justify-content-between align-items-center">
       <!-- Profile image -->
       <img src="assets/images/female.svg" alt="Profile" class="profile-image" />
 

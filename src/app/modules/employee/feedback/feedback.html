@@ -1,0 +1,63 @@
+<button class="btn btn-primary" (click)="openModal()">+Add Coach</button>
+
+<tvsm-modal [isOpen]="isOpen" (closed)="closeModal()" [title]="title" size="lg">
+  <div class="modal-content-wrap">
+    <div class="progress-section-wrapper d-flex flex-column">
+      <div class="head-wrap d-flex justify-content-between w-100">
+        <div class="date-section-wrapper">
+          <div class="card-number d-inline">1/4</div>
+          <div class="date-section">12-04-225</div>
+        </div>
+        <div class="profile-section-wrapper d-flex column-gap-2">
+          <div>
+            <img src="./assets/images/male.svg" alt="Coach profile image" class="coach-image rounded-circle">
+          </div>
+          <div>
+            <div class="d-flex column-gap-2">
+              <div class="coach-name">Coach Name</div>
+              <div class="star-rating">4</div>
+            </div>
+            <div class="email">
+              Name@tvsmotor.com
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="dashed">
+      <div class="advice-section-wrapper">
+
+      </div>
+      <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-between align-items-center row-gap-2">
+        <div class="d-flex align-items-center">
+          <input type="checkbox" id="customCheck" class="custom-checkbox me-2">
+          <label for="customCheck" class="mb-0 email-text">Send this Advice in Email</label>
+        </div>
+
+        <div>
+          <button class="download-button">Download</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-wrapper">
+      <div class="sub-heading">Feedback</div>
+      <div class="rating-feedback d-flex gap-3 d-flex justify-content-center">
+        <img *ngFor="let star of [].constructor(5); let i = index" src="./assets/icons/rating-star.svg" width="30"
+          height="30"
+          [style.filter]="(hoverIndex ? i < hoverIndex : i < rating) ? 'none' : 'grayscale(100%) brightness(150%) drop-shadow(0 0 0 black)'"
+          (click)="setRating(i + 1)" (mouseenter)="setHover(i + 1)" (mouseleave)="clearHover()" class="star"
+          alt="star" />
+      </div>
+
+      <div>
+        <tvsm-textarea [value]="description" (valueChange)="onInputChange($event)" maxlength="250" name="description">
+        </tvsm-textarea>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end column-gap-4">
+      <button class="close-btn">Cancel</button>
+      <button class="submit-btn">Submit</button>
+    </div>
+  </div>
+</tvsm-modal>

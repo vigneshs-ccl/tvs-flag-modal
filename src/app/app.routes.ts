@@ -5,9 +5,10 @@ import { FlagComponent } from '@app/modules/admin/flag/flag.component';
 import { ProfileComponent } from '@app/modules/employee/profile/profile.component';
 import { CoachProfileComponent } from '@app/modules/coach/coach-profile/coach-profile.component';
 import { AdminProfileComponent } from '@app/modules/admin/admin-profile/admin-profile.component';
-import { AddCoachComponent } from './modules/admin/add-coach/add-coach.component';
-import { SurveyFormComponents } from './modules/admin/survey-form/survey-form.components';
-import { CustomPanelComponent } from './components/custom-panel/custom-panel.component';
+import { AddCoachComponent } from '@app/modules/admin/add-coach/add-coach.component';
+import { SurveyFormComponents } from '@app/modules/admin/survey-form/survey-form.components';
+import { CustomPanelComponent } from '@app/components/custom-panel/custom-panel.component';
+import { Feedback } from '@app/modules/employee/feedback/feedback';
 
 export const routes: Routes = [
   {
@@ -58,12 +59,16 @@ export const routes: Routes = [
     component: SurveyFormComponents,
   },
   {
+    path: 'feedback',
+    component: Feedback
+  },
+  {
     path: '',
-    redirectTo: 'survey-form',
+    redirectTo: 'feedback',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'survey-form',
+    redirectTo: 'feedback',
   },
 ];
