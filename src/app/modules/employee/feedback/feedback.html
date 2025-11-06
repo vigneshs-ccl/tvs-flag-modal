@@ -1,4 +1,4 @@
-<button class="btn btn-primary" (click)="openModal()">+Add Coach</button>
+<button class="submit-btn" (click)="openModal()">Feedback</button>
 
 <tvsm-modal [isOpen]="isOpen" (closed)="closeModal()" [title]="title" size="lg">
   <div class="modal-content-wrap">
@@ -6,7 +6,7 @@
       <div class="head-wrap d-flex justify-content-between flex-row-reverse flex-sm-row w-100">
         <div class="date-section-wrapper">
           <div class="card-number d-inline ms-3 ms-sm-0">1/4</div>
-          <div class="date-section">12-04-225</div>
+          <div class="date-section pt-1">12-04-225</div>
         </div>
         <div class="profile-section-wrapper d-flex flex-column flex-sm-row column-gap-2">
           <div>
@@ -140,7 +140,7 @@
     </div>
 
     <div class="d-flex justify-content-end column-gap-4">
-      <button class="close-btn">Cancel</button>
+      <button class="close-btn" (click)="closeModal()">Cancel</button>
       <button class="submit-btn">Submit</button>
     </div>
   </div>
