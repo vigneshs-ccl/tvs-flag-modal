@@ -3,38 +3,120 @@
 <tvsm-modal [isOpen]="isOpen" (closed)="closeModal()" [title]="title" size="lg">
   <div class="modal-content-wrap">
     <div class="progress-section-wrapper d-flex flex-column">
-      <div class="head-wrap d-flex justify-content-between w-100">
+      <div class="head-wrap d-flex justify-content-between flex-row-reverse flex-sm-row w-100">
         <div class="date-section-wrapper">
-          <div class="card-number d-inline">1/4</div>
+          <div class="card-number d-inline ms-3 ms-sm-0">1/4</div>
           <div class="date-section">12-04-225</div>
         </div>
-        <div class="profile-section-wrapper d-flex column-gap-2">
+        <div class="profile-section-wrapper d-flex flex-column flex-sm-row column-gap-2">
           <div>
-            <img src="./assets/images/male.svg" alt="Coach profile image" class="coach-image rounded-circle">
+            <img src="./assets/images/male.svg" alt="Coach profile image" class="coach-image rounded-circle border" />
           </div>
           <div>
             <div class="d-flex column-gap-2">
               <div class="coach-name">Coach Name</div>
-              <div class="star-rating">4</div>
+              <div class="star-rating d-flex align-items-center">
+                <span>4</span>
+                <img src="./assets/icons/rating-star.svg" alt="" />
+              </div>
             </div>
-            <div class="email">
-              Name@tvsmotor.com
+            <div class="email">Name&#64;tvsmotor.com</div>
+          </div>
+        </div>
+      </div>
+      <hr class="dashed" />
+      <div class="advice-section-wrapper pb-3">
+        <div class="container">
+          <div class="row fw-semibold mb-2">
+            <div class="col-12 col-sm-9 sub-heading heading-text">
+              Advices : Advice Given - Frequency - Comments
+            </div>
+            <div class="col-12 col-sm-3 d-none d-lg-block sub-heading">Your Progress</div>
+          </div>
+
+          <div class="row align-items-center advices">
+            <!-- Left Section -->
+            <div class="col-12 col-lg-9 d-flex align-items-center">
+              <span class="circle"></span>
+              <span class="advice-text">Drink Green Tea - Thrice in a Day - Lipton Green Tea</span>
+            </div>
+
+            <!-- Right Section -->
+            <div class="col-12 col-lg-3 d-flex align-items-center mt-2 mt-lg-0 progress-section">
+              <div class="d-lg-none pe-3 progress-text sub-heading">Your Progress:</div>
+              <div class="select-section">
+                <tvsm-select #feedbackStatusSelect id="feedbackStatus" [options]="feedback_status_options"
+                  (selectionChange)="onSelectChange($event)" placeholder="Select">
+                  <ng-template #filterIcon>
+                    <img src="./assets/icons/dropdown.svg" alt="Dropdown Icon" class="custom-dropdown-icon" />
+                  </ng-template>
+                </tvsm-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-center advices">
+            <!-- Left Section -->
+            <div class="col-12 col-lg-9 d-flex align-items-center">
+              <span class="circle"></span>
+              <span class="advice-text">Millets Diet - Every Day - Ragi Ladoo, Bajra Roti</span>
+            </div>
+
+            <!-- Right Section -->
+            <div class="col-12 col-lg-3 d-flex align-items-center mt-2 mt-lg-0 progress-section">
+              <div class="d-lg-none pe-3 progress-text sub-heading">Your Progress:</div>
+              <div class="select-section">
+                <tvsm-select #feedbackStatusSelect id="feedbackStatus" [options]="feedback_status_options"
+                  (selectionChange)="onSelectChange($event)" placeholder="Select">
+                  <ng-template #filterIcon>
+                    <img src="./assets/icons/dropdown.svg" alt="Dropdown Icon" class="custom-dropdown-icon" />
+                  </ng-template>
+                </tvsm-select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-center advices">
+            <!-- Left Section -->
+            <div class="col-12 col-lg-9 d-flex align-items-center">
+              <span class="circle"></span>
+              <span class="advice-text">Drink two litres of water - Every Day - Prefer sugar free juices</span>
+            </div>
+
+            <!-- Right Section -->
+            <div class="col-12 col-lg-3 d-flex align-items-center mt-2 mt-lg-0 progress-section">
+              <div class="d-lg-none pe-3 progress-text sub-heading">Your Progress:</div>
+              <div class="select-section">
+                <tvsm-select #feedbackStatusSelect id="feedbackStatus" [options]="feedback_status_options"
+                  (selectionChange)="onSelectChange($event)" placeholder="Select">
+                  <ng-template #filterIcon>
+                    <img src="./assets/icons/dropdown.svg" alt="Dropdown Icon" class="custom-dropdown-icon" />
+                  </ng-template>
+                </tvsm-select>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <hr class="dashed">
-      <div class="advice-section-wrapper">
-
-      </div>
-      <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-between align-items-center row-gap-2">
-        <div class="d-flex align-items-center">
-          <input type="checkbox" id="customCheck" class="custom-checkbox me-2">
+      <div
+        class="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-end align-items-center row-gap-2 column-gap-2">
+        <!-- <div class="d-flex align-items-center">
+          <input type="checkbox" id="customCheck" class="custom-checkbox me-2" />
           <label for="customCheck" class="mb-0 email-text">Send this Advice in Email</label>
+        </div> -->
+
+        <div>
+          <button class="download-button mt-2 mt-lg-0 d-flex align-items-center justify-content-center">
+            <img src="./assets/icons/download.svg" alt="Download Icon" class="me-2 download-icon" />
+            <span>Email</span>
+          </button>
         </div>
 
         <div>
-          <button class="download-button">Download</button>
+          <button class="download-button mt-2 mt-lg-0 d-flex align-items-center justify-content-center">
+            <img src="./assets/icons/download.svg" alt="Download Icon" class="me-2 download-icon" />
+            <span>Download</span>
+          </button>
         </div>
       </div>
     </div>
@@ -42,10 +124,12 @@
     <div class="feedback-wrapper">
       <div class="sub-heading">Feedback</div>
       <div class="rating-feedback d-flex gap-3 d-flex justify-content-center">
-        <img *ngFor="let star of [].constructor(5); let i = index" src="./assets/icons/rating-star.svg" width="30"
-          height="30"
-          [style.filter]="(hoverIndex ? i < hoverIndex : i < rating) ? 'none' : 'grayscale(100%) brightness(150%) drop-shadow(0 0 0 black)'"
-          (click)="setRating(i + 1)" (mouseenter)="setHover(i + 1)" (mouseleave)="clearHover()" class="star"
+        <img *ngFor="let star of [].constructor(5); let i = index" src="./assets/icons/rating-star.svg" width="35"
+          height="35" [style.filter]="
+            (hoverIndex ? i < hoverIndex : i < rating)
+              ? 'none'
+              : 'grayscale(100%) brightness(150%) drop-shadow(0 0 0 black)'
+          " (click)="setRating(i + 1)" (mouseenter)="setHover(i + 1)" (mouseleave)="clearHover()" class="star"
           alt="star" />
       </div>
 

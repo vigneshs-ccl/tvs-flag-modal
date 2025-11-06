@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ModalComponent, TextareaComponent } from '@Digital-mfg/mhi-ui-components';
+import { ModalComponent, SelectComponent, TextareaComponent } from '@Digital-mfg/mhi-ui-components';
 
 @Component({
   selector: 'app-feedback',
-  imports: [ModalComponent, CommonModule,TextareaComponent],
+  imports: [ModalComponent, CommonModule, TextareaComponent, SelectComponent],
   templateUrl: './feedback.html',
   styleUrl: './feedback.scss',
 })
@@ -14,7 +14,17 @@ export class Feedback {
   rating = 0;
   hoverIndex = 0;
   description: string = '';
+  selectedOption: string = 'Select';
 
+  feedback_status_options = [
+    { label: 'Select Progress', value: '' },
+    { label: 'I am Following', value: 'following' },
+    { label: 'I am not Following', value: 'not_following' },
+  ];
+
+  onSelectChange(value: string | string[]) {
+    console.log('Selected:', value);
+  }
   openModal() {
     this.isOpen = true;
   }
@@ -39,5 +49,9 @@ export class Feedback {
   onInputChange(value: string) {
     this.description = value;
     console.log(this.description);
+  }
+
+  selectOption(option: string): void {
+    this.selectedOption = option;
   }
 }

@@ -1,0 +1,187 @@
+.custom-panel {
+  position: absolute;
+  width: 400px;
+  top: 40px;
+  z-index: 1050;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0px;
+
+  // For mobile
+  @media (max-width: 430px) {
+    width: 100%;
+  }
+}
+
+.panel-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 150px;
+
+  img.panel-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .top-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px; 
+
+    .profile-image {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+  }
+}
+
+// button outline
+
+.btn-outline {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 2px solid #5b2ae3;
+  border-radius: 20px;
+  color: #5b2ae3;
+  padding: 6px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'roboto';
+  transition: all 0.3s ease;
+}
+
+.btn-logout {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #5b2ae3;
+  border-radius: 20px;
+  color: #5b2ae3;
+  padding: 8px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'roboto';
+  transition: all 0.3s ease;
+}
+
+.custom-panel-footer {
+  padding-right: 24px;
+  padding-bottom: 16px;
+}
+
+// profile section styles
+.header {
+  background-color: #5b2ae3;
+  height: 48px;
+  padding: 6px 24px;
+  .profile-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.profile-content-wrapper {
+  padding: 16px;
+  .general-details-wrapper {
+    padding: 16px 8px 10px 14px;
+    margin-top: 16px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+  }
+
+  .emergency-details-wrapper {
+    padding: 16px 12px 16px 14px;
+    background-color: #f8f9fa;
+    margin-top: 11px;
+    border-radius: 6px;
+  }
+
+  .version-wrapper {
+    padding: 6px 12px;
+    margin-top: 16px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+  }
+}
+
+.detail-section {
+  .left-section,
+  .right-section {
+    gap: 16px;
+  }
+}
+
+// typography
+.details-heading {
+  color: #000000; 
+  font-weight: 500; 
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+.left-detail-text {
+  color: #666666; 
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; 
+  font-size: 0.75rem; 
+}
+
+.right-detail-text {
+  color: #191919; 
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; 
+  font-size: 0.8125rem; 
+}
+
+.left-detail-text,
+.right-detail-text {
+  line-height: 1.25rem; 
+}
+
+.coach-name {
+  color: #1f1f1f;
+
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.coach-type{
+
+  font-size: 0.875rem;
+  font-weight:500;
+  color:#006E08;
+  padding-right: 8px;
+}
+
+.rating-text {
+  color: #ffa700; 
+  font-family: 'Inter', sans-serif;
+  font-weight: 500; 
+  font-size: 0.9375rem; 
+}
+
+.id-text {
+  color: #666666; 
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; 
+  font-size: 0.8125rem; 
+}
+
+.verstion-text {
+  color: #0900e5; 
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; 
+  font-size: 0.75rem; 
+}
+
+.new-release-text {
+  color: #6e6e6e; 
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; 
+  font-size: 0.625rem; 
+}

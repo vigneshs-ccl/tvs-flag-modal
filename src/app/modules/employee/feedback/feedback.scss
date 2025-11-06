@@ -49,6 +49,7 @@
   font-size: 0.938rem;
   font-weight: 500;
   color:#5A5A5A;
+  // margin-top:26px;
 }
 
 .coach-name{
@@ -74,10 +75,20 @@
   border: none;
   border-top: 2px dashed #D0D0D0;
   width: 100%;
-  // display: block;
-   opacity: 1;
+  opacity: 1;
   margin-top: 16px;
 }
+
+.circle {
+  background-color: #3360F4;
+  border: 2px solid #C9C9C9;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
 
 .custom-checkbox {
   width: 20px;   
@@ -96,6 +107,13 @@
   font-weight: 500;
 }
 
+.download-icon{
+  width: 24px;
+  height: 24px; 
+  color: #5b2ae3;
+  filter: invert(22%) sepia(87%) saturate(6379%) hue-rotate(255deg) brightness(95%) contrast(97%);
+}
+
 .email-text{
   font-size: 0.813rem;
   font-weight: 500;
@@ -111,6 +129,21 @@
   font-size: 0.938rem;
   font-weight: 500;
   color:#2B2B2B;
+}
+
+
+.progress-text{
+  font-size: 0.875rem;
+  // font-weight: 500;
+  // color:#2B2B2B;
+  margin-left:28px;
+
+}
+
+.advice-text{
+  font-size: 0.813rem;
+  font-weight: 400;
+  color:#555555;
 }
 
 // star rating section
@@ -173,4 +206,104 @@
   padding: 6px 20px;
   font-size: 1rem;
   font-weight: 500;
+}
+
+.advices {
+  padding: 10px 10px 12px 16px;
+  // background-color: #F7F7F7;
+  border-bottom: 1px solid #aaa8a874;
+  // box-shadow: 0 0 1px #0000C73B !important;
+  border-radius: 4px;
+
+  @media (max-width: 992px) {
+    padding-right: 0px !important;
+  }
+}
+
+.row>*{
+  padding-left: 0px!important;
+  // padding-right: 0px!important;
+}
+
+
+// select styles
+::ng-deep .tvsm-select-container {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+::ng-deep .tvsm-select {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 0.875rem !important;
+  color: #1C1C1C !important;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  appearance: none !important;
+  flex: 1 !important;
+  background-image: './assets/icons/dropdown.svg'!important;
+}
+
+
+::ng-deep .custom-dropdown-icon {
+  width: 14px;
+  height: 14px;
+}
+
+::ng-deep .tvsm-select__helper,
+::ng-deep .tvsm-select__error {
+  display: none !important;
+}
+
+::ng-deep
+.tvsm-select-container:not(:has(.tvsm-select__dropdown-icon)) .tvsm-select {
+  background-image: url('/assets/icons/dropdown.svg') !important;
+
+  background-repeat: no-repeat !important;
+  background-position: right 35px center !important; /* 35px gap from text */
+  background-size: 14px !important;
+  padding-right: 70px !important; /* Space for the icon */
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  color: #000 !important;
+  font-size: 0.875rem !important;
+  cursor: pointer !important;
+  appearance: none !important;
+  text-align: center;
+}
+
+
+@media (max-width: 480px) {
+  .progress-section {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .heading-text{
+    font-size:0.813rem!important;
+    text-align: center;
+  }
+
+  .progress-text {
+    padding-right: 0 !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.813rem!important;
+  }
+
+  tvsm-select {
+    width: 100% !important;
+  }
+
+  .select-section{
+    margin-left: 32px;
+  }
+
 }
